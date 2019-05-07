@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Salekin's Blog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 50%;
+      height: 50%;
+  }
+
+
+ 
+
+
+
+ h1{ font-family:sans-serif;
+         background-color:rgb(206, 224, 220);
+     }
+     h3{ font-style:italic;
+         font-family: sans-serif;
+         background-color:gray;
+     }
+     h2{ font-style:italic;} 
+     
+     h4 {font-style:italic;}
+     
+     h5 { font-style: italic;
+          font-weight:bold;
+          text-align: left;
+          background-color:white;
+          font-size:16px; 
+      }
+     #norge{
+              font-style: italic;
+          font-weight:bold;
+          background-color:white;
+              font-size: 16px;
+     }
+
+     body{
+        background-color:white;
+        font-family: sans-serif;
+        margin-left: 15px;
+     } 
+
+     /* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: black;
+  font-size: 35px;
+  cursor: pointer;
+}
+ * {
+  box-sizing: border-box;
+}
+
+
+
+
+
+.inner{
+  ;
+}
+
+.inner img{
+  transition: all 1.5s ease;
+}
+
+
+.inner:hover img{
+
+  transform:scale(1.2);
+}
+
+
+.outer{
+
+}
+
+.outer:hover img{
+
+transition:.5s ease;
+ 
+}
+
+.hovereffect img{
+ margin-left: 20px;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.hovereffect:hover img{
+    
+ margin-left: 0;
+}
+
+
+
+
+
+.effects img {
+  -webkit-filter: sepia(0);
+  filter: sepia(0);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.effects:hover img {
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+}
+
+.shine{
+  position: relative;
+}
+
+.shine::before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+
+}
+
+.shine:hover:before {
+
+   -webkit-animation: shine .75s;
+  animation: shine .75s;
+
+}
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+.gray img{
+
+   -webkit-filter: sepia(0);
+  filter: sepia(0);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+
+}
+
+.gray:hover img{
+
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+
+}
+
+.flash:hover img{
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.grayscale img{
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+
+}
+
+.grayscale:hover img{
+   -webkit-filter: grayscale(100%);
+   -filter:grayscale(100%);
+}
+
+.opacity img{
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.opacity:hover img{
+   opacity: .5;
+}
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+<!---nav bar from bs4--->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!--<a class="navbar-brand" href="#">Navbar</a>-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/in/salekin-imran-b2354349/">About</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Contents
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#norge">A journey of a ten thousand miles </a>
+          <a class="dropdown-item" href="#">Random thoughts</a>
+          <a class="dropdown-item" href="#BP">Beautiful people</a>
+          <a class="dropdown-item" href="#">Special moments</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--heading-->
+<div style="padding-left: 16px">
+     
+        <!--<h1 class="glow">GLOWING TEXT</h1>-->
+        <h1 class="shadow p-3 mb-5 bg-white rounded">Salekin's blog</h1>
+      
+    </div>
+    
+    <div>
+     <h2>First post</h2>
+        <h6>Posted on 15 jan 2019</h6>
+        
+        <p>I am starting my own blog as a part of being a developer. I feel in a blog you can really layout your thoughts, moments & journeys much better. I am starting to write about my journey starting from the last five years.I hope it will build up nicely with time. </p>
+ 
+
+</div>
+
+
+ <div>  
+    <p class="shadow-lg p-3 mb-5 bg-white rounded">"This is my first experimental blog, which is still growing"</p>
+  </div>
+
+<!--carousel slide from bs4--->
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/Du3UIQvKlB0AC6xn11jCQBuAirKaqXybqFTnOUNf77gFf-t81hxYd_n56MF3ucvGCbFDS3MoEwq87Unzj90v7FcIzPMVuIo9X9K_d3YFhtHn4MUBcUHKb6f3f_z_OLNvop4h3jlLJhH1rgZNxwu5X_72M-Y3r1gpNtEdsfz1OjHVoU3lQzXw5hoLdh9BysQJZrefuVPjFZCJfYtn_G0BN-1QW2HDtrd8PvJI_UFOdPgoYT3_RNPowYcY-OHnbgRRd4PpcT93H4y0pcw3iCLbqHcs1_Rv1qrqc6SknGoBoLfJnLW0_mIXFUyqDG7-uIiRdfl2Q6AOhWIUihkEOFM_sh-iaXnZW3HQ6T0paCJTYllq-AJlHTTMZonRQKdu_mfKOi52QCAGAzctW8GQrqBJGN9iCmdl73nyWxefH-ELhXjQKxKN-oMtejD1gGs7hEL5EKdySqi1U4p4jN70MkFFVEx0M-N2vC38aQyk2UMX5IB-pMfbWsW0_8NV8HyCMlAhyoXMa8haaze1QtnjyLgo5PWHMmhmAV2jACG03tq7nsdyUWCx5wi1bs2T65cDuNKqvFDhw0KLz4UXXUJQrIBK42VvB5oPL26m8gZpA4ibmUsXbqzPxOUl-zASR-njfnXstFWgh3acifsekpGKHTWVfOOcgTg4Fl0=w811-h608-no"  alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/tF8aoLXUsNPVfkiZtXFornHbRipBBMav7xRGcWR0XDrn3yRsk9C9rqCAHCH4yJY4G9DRcavTZo5yv7sQnJXiI92K6JmFxz0FW6c6QwJbnYZkbb-idEaV9K1Yegq_2tLY-zZWzC8ddBLfHcrIJE7GKejy5hrSXdtRhW26j4SQwk3CHXL6bht6PhICYHrRAac5aCCOBor93NMOHcKBIDAmfzJqhBZnLQi-Xpmovq44998oScW8rR-0fxml9m-RKrUotX2IWwWLOidDqL2xWcQ0dAWid5_NazgXyhBa98M1C7ZWi6U_kqMWKDL77gs1iYBRr5CVHCyZ9zXNZV0Z9trMVc5Nf090llLztkXw0GBtxIv81ITcSNNlfpgk_pIrHklIcmH5uVWUsmSsefuKyyxFIR0KDqA02uPE7Q9S9AD5AoHy7gbSHbyTkE97LO3lMO0Ud0HVj2BWbfDudloR7-nHFUZlZ1mRctXnlDnFbg6y9j_XZsgqSmW4DGLJJJkR5zlGanbuisDITLxctTZ8LXEdrbvHZEFAPLrO_FA3oMsJL8JBOqhXVBeN83gm8ewqbYHncuKQS03l2RC7unUG3gaaca1aE_ErJilERGRmMUrHW7vNORUH3zSbUjmFRNooM9UlKfalr7rT1COnlDItgm_YTD-5srpCS-8=w811-h608-no" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/Fak0hCpXXldEyI2beepzEVH6ayPFIz-RkJEgfa6gKSRtgmxR8OUolNegwnxL8-rbuMUBV86nTYMwV8DU8zMsHo4K2FjRxmsTBqFRdWtSWh1B_pn7GII3huQAwn97F6n-qWF9ziZuZVsjzFKBSAEsddFD2NgCe3j2ooXIAk6b_mna3mW2Q-D08QWsG3-i2MM7uDQlybHqeuG-m9A73tUeqw1hBN5o-3WHQCnuWZR0T_6vW_f5875j2sBdw7qH_btzEqNvIYoauzEj1iZwqlEqA6eACTpZPp40Kbtln4B7P1A4HQvdZHXUQ8kB6x0yy2bAhPZ4-ZF4ynGoSvXA6hPH5UFxFDsrW8iPKXQ41BP4teBwGDC9qQ53KBOtPmVWiS0Ji_Ju17s8mZCKF6_cRWIHPRlTkwgpCSReNGFe98oS07I38tJdtRIciQjDUfIrpy-o7hy0gbCYZJB4a8GYeC5PUr4hF1EmOljYUI-egneTvbxf_B5MU9En78IHbcbnY55Vm6a7z18Op3G612DzAMFwUtlGnycf10iBuAkFLXti2Rjx2k-aHSZKvTN_5DyYrx5bYnKMENsLrGzXg1XqhSCXlWKok4RHg105i-obZhFOq1qOgOPvX6z-0Q7UNRMCp7984dNO6cVJqCaLNdg1DrnDIi0_HXCJEVY=w811-h608-no" alt="Third slide">
+    </div>
+
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/h5PWNObAy0kwUsdVS1vEsGmcDMzKevP2Cqojl6_MXoxea25qRMfUwDvbHcz0eRiqoxtiJW9ZFFaaqYGuq_zxQ_biwhoBqu270jOodMarwI9-nwSHYwCw2ywoWbz-jRlw-qU3YyoH8z1GyS57vLtC4lX3zyWeMXj0s7mAA38V19LJYhhgOeAUlzcWMUt2Q31iYC1z6-tZMzTwWVpgqFVEL7h01nlh1lpShomz35JPu64G6vzBfkV6B_wc5Y-sC73dVIPdetm9zpq66sJRLh6W2cYHPDudTRdeQnMuiQ5TGn0xyawM8yoLTi1mbBHAIIKDeKZYm3t0874y36s54plIwrVWPDNnVvMduygqsJJMn-ZWCO8XRv0IPoVJFFr6lEdxdbCLdqUktgArxlK9yG5q4GshUL9bis5Gdvodg8pD56O4enQA3Q3ja-8FDtgeVkUzyFYDZI4Mwt2Bg6nHleLz7j7dDbe_XZTZjIaFLXequYJZdgRQgyBqKkoG2HTPPQCMEFI7AjyU8uOIbZvTAVN31fqdZog-g8wqFNT8RlJpQdTFjw4xsapJjGcRKgDDXTZfB2bCuTU9FhIhQyyezhdZhd5j3rBbTAJonrqBeGmtlUH4rkQ_Ib-tv3yyJ8nZktDTo0XPY-_TA_GICEBGjJKs-JDLejv7SSA=w811-h608-no" alt="fourth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/oP4gfPamTiyMkDtLi5PdyeBNNmCYZ9Awwfp9_DlNTXgSQ5uBbP3wzYto3T99jLv5KUw3E6QA8BfweHtUOzlpxzWAaUVbTbKsrg2QV8GjH7dta4kbsPUDKcwP5g87i_kvirKRxG1DU5zc-IjPLalRsjuiDO-kmVfMpoWhzM-gm8wbf_jbBS9BU9wzfEvW-Gt4eA7zo-cX3RFUKVfChi-9_ie22cj-do59TERi1336a_0wQE9_TdqOHHPZXamh8OsGgwpMBXPmOKM6U0yyfhs4kX6lqT95EC6qd26O2VZsuEL948l4Sy3phe5QpoBVEBgJkWLXJIHX-Yb44Rf86uz-ibosmse28gW_XyoQWHsfjDSIPk7yYNdkhJiuhgKH1ZY6INCRIqP84I38JM18cvdBdYiE9yXUAUI3EJD93UpPonQ0NVNJuwhdTujQhzId_XjKA76zl9suoVYiI-1jS4yq5ttQ9cesO53HICbasZY43Tvb9uPZK0uiGNTr2wWJWu9kuig8kpG9qFYBPyBqZArKAK5j6H_UcjEM3x-1N_TZOnYcTRip0PvM3uBt7s4ovTP_MLKhhhfsa1TufXrh-519S_9O9Y_tUN8OhPLD7VaGQHbDSi2D2C0Pc_8lGm7SsNDA73ceHvg8-r97q-a9MQ5GsEAOijxtQQw=w811-h608-no" alt="fifth slide">
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/hFbNS5kHcc3IwYk3NvkNmFWi7EtkSRMBLJJCJQN0ZCN-RJmv2NHiEp9SDkCo-41qu-JeCKeff3Q2e_alNuMxfNvqAA6ZaIfxpIDwIXpevHHNPMASzlHlOQDyO5wwD0AQBVDKjkRhsI9yFLDJKVjPQj0vhR3TV9LprJlL1ZWX3sxqh3XYGEpmrho-Hcfz0cQ_ZjfI1_DDhg78rFX8I3tW8hMbi2cEDPFtCL1Ow6m8i2dgNyDTAufHBDoZmtQiqnKgFFWhm6qV2K5ew_QNxUUWo7tAZMb00SwgNPzH-kiGNRPWoi6_eT-nir8woqAlrFVXC7vT5rQpefZ3WY48m5LUBN6DD2JJr0Z3xh34CUK5itQiwWo_vad-Qg0fvrM71_3siZf8aFKJRkNnz9-avCuDwO-hEU_CtyBmhn6KiJLPCN_h16FxHoMkFMdF_d9PXLXt1NSkBwcPbDTcmW-6XsDssm-1SUw6bOk5mUakWpOgEhrZBlhIZ6AEzfn8ADAazN4CrgQsom6q0aamsrcB0hkPaiSy35r57m4VtQLwAprUUC1nx2rOFqtIe25Gh-AwO5L4XEnupvWx2SLYF8ZVOGmMaPd4SvRfwned4wdRd6g5rBz3AnmoLBV6WQL-IpfZGaI1oRtaByhOAaaHaQURPABI3AXl6h4EU_I=w811-h608-no" alt="Sixth slide">
+    </div>
+
+      <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/8P8aS-v5852gM--i-r212bFRRbzdPP47g8eHPYtsKoAppe0ci-u9TOx_oYoHhIe2zCIgICgQHHxG3CDrOpW0FKiz-UK15TTNRbFfyQTkdxaizi2pnEO3uWhfeZwfE6AMnbwoOaocytjL4wPsI6LfkmHfFQ2919bTUzoZDFIIEFGZM9cAaC5JTKqs5P0-8C4VfuKxcaqF2TzhAbd-Pp0OBiXNbE4velVfdcIKulgrYauoVL3H_dglhe46FOte_6JpECncJ4q8AiSIoxptUTstqTHzVJZiOkYNwclA9iLQwLvBCWIHO4LBsbVKbhA7DoRr01Ko1qSWP_S3E43hsLYNVeREa5mfBfrJmcQ7r3aH2NfBaYdO3zdEi_5VF8bSuOoQsl9rJup1dobJLVewudHaooKHFbajzbeEdI9mJ8djvXre7DwADzGtEZxrNeoHkBqDwt7jDpfKwOE5C4fh-3Fl1057pJBHE7v0OnHKWqwvys8X7gaO4eCIwLatBdqbBL8K7mcQwEvW1ONgCb_6zCI4Iv5gXwYIACG7gFtBYanyfhUbK3P45yQM5Vtcc9kAo566IK3rhhIoGw5dDyO9AI3kOGMaElel-zRl5QZqoocUQaheLzeJiv4o12jDcAtYtLair6LdOGHa3oaPgOV0g4tcFUc7lngyWaw=w960-h342-no" alt="Seventh slide">
+    </div>
+
+    <div class="carousel-item">
+      <img id="SM" class="d-block w-100" src="https://lh3.googleusercontent.com/uvniwkxx3Hv2Xc2YIMMg0qBIHHpXDGgpSJiiinieujdIKIc6hx1kUm5B0TF4UMmv43dpj8I1Qo_83GzVJc8bg3x_0vSURRybW4bCN3c9qa3HiIyEwhcsBtqJQQMcH77HSxtdBqhFggV5O77QTGcwOMCIfgdlQLZ-aK0OCvGQG3N4wL9LDZMLsHq62QudsIJ0sYDnsr78r5NLeTsCuvH1QrQBv4nIM7SbOJEwk0xAGY6luMKc2uywuCj4otJuKLpiGipE0TIefw56_J8BeoIUt41JerR-ckv8xinPPu5OneO5P-3Qbiy6VHpBoiKdtZoFD_ZB0EhReP1Jr1usDhMaoYfa4U_tylBm6ViX8ovBpnQ2PH3rFMH0MyCxil68EEr0BXB4J26WUeVrRuiF2bEpuQG2IHrltDgDlbIiF4Rmi6aRuHEAsosa5_yoqGJQ38EjrHP_pIO7kDN8jCh7t-PIfnMynCUScEQeJk9b3CdrFoRLqgv1Xk0FlScNTzk25wbb89Te8b_J63_5ss9c5FjfRG-ep74es76bsXbLhYT72h52thpWF-2Xj0nBLjpt2hboCTWRj_5abAKbcMzlFal78sUUDpCfpFU1BxGP9uUJotnWNrUxPeLxjRcA5JHPmMQIy_oSWn6-DP8N_LFbwr7vrJ7tuM-Gz-c=w811-h608-no" alt="eighth slide " style="width: 500px">
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/8z5M1hZx4RntW4j2peVAomPraP_MLQvP_L_tUwmBZDvkkm_CWjuEZy7KYz9jA4w3FsPPSifxMGwVuIIfUFuPGqQk_nzy2insM7YQVCvpgF00VsAOX4yjAzBlRhCjAvDarH3UEY_uk-SWn8ij2Vkx4q23daGVL1JpEG6NrlzHuzLXvc247gQ4l0YeXacOlPvpih1QfG0O_642Zfrmh-4cBLt_dFPh8DB2kBkmBennG-HkypL-i0XzqPJPHgHQNBRKvtYi14aqbGurGn3ebi1CRR-IG2lRmlhEIYOMk450VMkRduebG1glNmqkpoSlsGaDHFISExE5TZfqvOFAfTvSdwN84AhADqVAlRkno7Nj9ysy08yvPQSikBHAEiRPsYzX8q0p7CnwC1pXPncB_1rx8oO7u2S8M0TlSInOKTEjgbR0UkjqOcreHxUsQqDb6dkvC50FmPfG0iOPvvhVAsUU5cLqTKj800LlGMLe8_1D_9n8_d6fnlB5TFrqBKgPZhsZ8x_DB-2D9nswYpejPVSxXyOHK7xqq4SPxi_Lq5-tlJw5fW6MYqeUd4sd6654CyRp7DtGbckQkBo0dyZspbk2tbu5W90iXV1FD8QXo2v0eK_tiGmOzFNirceDndWmTeen1_fOscuuqTdtiIng3Da6ytfepNoBSaw=w811-h608-no" alt="nineth slide " style="width: 500px">
+    </div>
+
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/sVIBtHGJm7DYH5QFYVBan-yVdWErYt26f8NmUlTeiqKTIuoO0h0HpGopd5RHv9Y7vlwW6xrBKaqjirSwwWmYDhwD8SMuVFTWCG59KzGl4mzZ75nzeFV0RJ63cBkTvh8KPtU-tjr0jzoNGCSNXkGMilBGqOo6vhvB01UBSwoeLtFrCLGd39KA9s4AKzY_9aIDt0ZFUd6IckOQJNPgPKsGBV4TuNHQ8Ve-_73o3OMZiAioWKMMAjBulCJqkgQVwmElZYo1jTWTbd2JQxeFogRx3cEll_qhBLsu_qYI0cGhN80t8XlS4A3ss5DcbIeiTYvv5_1cwDOP5ajPwCJIDKy3E80bm4gsgYZQHgl6mdZPqj6WrEkh84fUHCSEcGbzYwI7wPHINH6DE1duiO-6nR_lhiYmRID2ovfqLpFr97Kb4cNgxSeEgEF_0iP6Xvo9nV1Rn25nocdEAWA38yMkcWsrz8ASyuywPmS6VloRdiqRK5rXDFMVleXCmY6yk4xeGsrPcPxGhadUBtOpsfClUTCX9trcFE_1XsapWTIo0LxoMr-7RI6U8Yv6rWurRGXS2a2NEQT8kBOmwhvYhr49c-8yablfDEXV619bbmc8Y1nQpdg_HPSXgA8ah5WRk-_4gFsbMS9o-oaeh963qEwyVeC7wolcoEK3MyU=w811-h608-no" alt="tenth slide " style="width: 500px">
+    </div>
+
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/LyZRzKqHT055Jky_OUix3iedf3LIZXYaxy5CljesUlNh3PahNVJF5Vi_P3XxS4KUkrrlObs58b3WwDybwZmf2iHQK7BZhBej4cjy0qmmqJL6rCxAzwEtWjNhdBS8BWg4aFVGdsDjLmzzFVuuBWnBgzB8Cq8HXYFbRBfiF7zd1RbNPgAbukGE6XCS3REjxvjTFt_T_fu3OJvsU2nCXDrbxLX5GvPxzcmTfWC-SQpjuaeDbd1TbXjzlfgqjcoQ4a_nWOD8BqNd8MT9Dx8rQZFgMURjGvjQ7ChoO8cbLwAZ4-W7X6SA92FAS8JxBnmJOoTkgkqzSEePWE3MMu4uZNmPYfWWjyvxBPoE-6PnJdsnL2H1h68OQ25V6UiQU8hasR26i_rhCbmkSuo8Qp_QtdWHlYDSTAEpkqGZpP9WTw8NU4Y8OqceR0oSirUUZMQnTpg0yQ8VKFS_m9MIJM3jd5x8IHOUn6_xIWRtVR5DjL3d1ewzZblrHNtgXJAk42bH-2X2SAEZ9ixCDL2M-TIxUzNigm3xjaLGU8rLx8xoDKVmRdPt15K7_jGGl0wnuiM2HEc43Ts8vZfP8uvg9VgFfBmAX0QJFW9DuidpFNhl9nuO55OEPav8lMDpTX94xupBdL4fHGuu7JqwiaT0TO1yC06FVx4gkZull18=w960-h543-no" alt="Eleventh slide " style="width: 500px">
+    </div>
+  
+  
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://lh3.googleusercontent.com/cagryXOIIusuz6zloYbNMWZ8qTF__WHIdlfW_IwMpC8JJn0lc-VqrbhoLHASlW-BRDFXl48Mrg2wmFKindx7c6YNfginYoHWLTJJlvImoVJekeDZOEK_en_2onkvOHB-oLDJ1DTXXnyLCT-V9Na66gjuBNY_j8yOWoBNLPuph2czTm2qLtzlBtU2GLWXGHJ5VqXIE0HM2PpuzJ4gaBpXwJN_sIUpgJsZ9eb9sEFiY23pSHcjFdLoz2zDQIjnzFH15gi0kQCdCPGm_0JfD2D-CbrLMcPSFsW4_yhQRnvSZpBmMHs0nLzPgTS6gjBPx7OftOGTd2ucyHzY_q2GucitZUbfgt83WzAUoIXCR3clksxB902oIUcknFD6CeO40j-rHA2h5mtoD6nHzguT7j_BAFHD1FKh_F5ehFwMAE0ySBgviAWYddLsBPHlPVnr-zK-VvlnmTJ3FwWvCojTqBE4sLM4sbV1BbzfOFpQbDObBo9SIvOClDBHRZDhck5jxaDyXGqmBj0vmqQxGuJ_xocpWB6kPEJXguCGLu7Jo1noN5mgJugF-Rlmh5xv8UPe2JQwy6YA3IxU-nhefibjMMCn04MJRkrdCusMMqflt-bg67zGcY00pzaH-4a78N7VvNW3CdFPJcpEx23lQe5_9hI_tu4nA8YpfhM=w811-h608-no" alt="Twelveth slide " style="width: 500px">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
+
+
+  <div>
+ <h4> 22 August, 2014 </h4>
+<P id="norge">Welcome to Norway!</P>
+
+</div>
+
+<div>
+
+        <p> My first day at university of Agder was not the actual first day of the semester, but however it was the first day for me. I have missed the study start festival and orientation, as i reached a bit later at the campus.Well this was just the begining. New country, new place, new people, new language,it was time to embrace the new.</p>
+        </div>    
+
+
+<!--<div class="card-columns">-->
+<!--  <div class="card-group">-->
+ <!-- <div class="card card-accent-primary mb-3" style="max-width: 40rem;">-->
+ 
+   <div class="card-columns">
+   
+  <div class="col-md-4">
+      <div class="card shadow" width="20rem">
+<!--<div class="card" style="width:500px">-->
+  <div class="card bg-light" >
+
+  <div class="inner"> 
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/s4VWX3Vj9RlUjTKTQI6CvKT0zBajPsjsI3_oLXMtZztxjx1ZbQbmhRJ-cUin8zpJhTpi4pZysBgna7whGRZGn5h_zQ0-48F90Vm2VMcpAzF95pA0ay6OeHhi14A537PSLtoO05iMKTqhEj4HLlMrqHPXD-A4iDEvAJHFkG65nQEg7nUIXK0wonesnNw7XtPLmIuiqHUY7VFgNI83Ku13V-FwpSwAnz2EG6yfGY4ErB6KkfFh7ff4sOsi6H3StnfCP8TOktkpTYhm23VnQlYFwUKYMVL5YWs5qg7JNxA5_MkrFarJ4GBa86f4a40qMND1BEcLeK5-yuj5NFoEFRAd0h-OqMuGWstp9Y0AVVyQdFx4by1lPNnKu_um2p9dxK8hh1dHDgvscMnsf542qW4MCMWEyUIa0soTv-Ux7A5ysVMBf42aHCozF9t1FkjIciDeP9v1Lt44zESgPDpk8M4ucyz9bZzwZUF1JitIOPtCnywIhmx4XJqd612x0tfut0zGbkyu1wmpshLKT9JykgD2JyaAJdLsn-bjeD9reXj4FaMCEPzZmTU29wfaV_xauVmYb7nGQjVUzoEHlVntuzimMnZUshBB_xWCOp0W5793z_SQQsueyRL3ll_z7siofeTWlYjg_E7VDx_YWK7tQXxoWJgxfAhUJiM=w811-h608-no" alt="Card image" style="width: 400px">
+   </div>
+  <!--<div class="card-img-overlay">-->
+    
+    
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-4">
+<div class="card shadow" width="20rem">
+<div class="card bg-light" >
+  <div class="inner"> 
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/tZf8ebVG1QCSv4HSeZMJgEHjnuHC9YC60FjsbqtKWd0AXUGtbMkSODnZqL4lL1DVQel10Bq4Fog0F6EbIHT56uq3FCBCIj_6G2vszrNO_hsOk63n0o0GxcxV3BdYc3WTeTshkIFoRW_i-KimHtHU2zM2rhRLt9pG8WzLQ46ZhqblRdQOry56lWgpZFiqE4HJUXlabN9SSe_tmm0bOqoOR7N8s4R5XTkWExxdhLATbnTtF4A5m7-GBlP07Up8nxaS-FvKlBsT3s_-Ij4THAW7c8PKztwi9rjbrlXCMf4iGCAiY7Dr_YG99IToIG9FjrKpRe8fOVhA33ei67Got_y97rPu7yU0RBgcBLEDAS4OV2nB6tLbvqpqJKzGGyCzD42mmlwqWXFjnqZRC6e_WKRcRjcdt-FkcqM_uebyGDBgiDQJpna5KUci_5xWk7_OFNSVhX0mkpH4UHPSAMiUENNVjJoCNC_0j6_VaDPiN_GJxuDQ_gwjQbRM1btrNQR9Kzxt5Laed69R35xuBkZM9XeHN3cyqSrB9DZqtUE75XwSCzKwdqhfqq1mP6O-IH0PQuHNEPwP2WpgkySAaAi-SciTud_I-Genio1JYkfivhHcFj66R6ZmPfMjst_F7roouYDLHxtX0Rdje88qd_zwWRHmdeO3Z0iCJDk=s608-no" alt="Card image"  style="width: 400px">
+  </div>
+  <!--<div class="card-img-overlay">-->
+   
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-4">
+<!--<div class="card" style="height:500px">-->
+  <div class="card shadow" width="20rem">
+  <div class="card bg-light" >
+    <div class="inner"> 
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/bf46ZGCa6JEIKR9EtiIk_tD2fGlWIG2nQAlyKnEx6x5mb9TxSatyEXEA2O57eYFk-O_JcaFvBu7BhaWVHJVelD9H3X1xPOcCedRdq0KQ4iPybN9ps1WWRm1WnOqPt9EoL9vsl5jA_y4Mu8eYu_koLJgyzC9EFSMCLs8ZXE54yhYYEmNoK_DrXj7rGuCNgv9ECYPvqcRInqkhj3ayz054dHyC9lSDvMV1WIjAd1EF-F1hhFC090xnA7YaJygOfsecuCGN1-bcHo8AmdSJKy7Ssrl7f6Pw884oqQuNwtCaBSBt6YnzWCvz-FUoCmmHfOlBb5L_WlHmTehDrOVZxTWfv9BTLgvNuwHpmza-QG9uA_3JN7pB5dJ5Cvwgb6tSUV3EcVB4NHyew3-m83p8F4qvx0Xiq6kp7Mzgrw5rnBBK8msdS8JXxOJNeiqMDdY2001WpzyEP1gncLaPzpOkKMbi_2ZKWMXpJYBt8aoXFvuLFxQwaV4tvsEFw-i6pGX6QKubgr96J2x5G7dxI4RFhX8qZxhuIh13_HLjK3L5KbUhBvYYZyzpFwZVLZC2Or53QK_kRILnF-BHi8QX7S8NKLZlGSHPzmdMgxgPWzvyWtZ8a2B8CbLyESHs54HS6rSKZdrfW59b5rbenHodk85SVS-F8iqUpDFl7-k=w912-h608-no" alt="Card image"  style="width: 400px" >
+  </div>
+
+ <!-- <div class="card-img-overlay">-->
+  
+    
+   
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+        <h5> Studying at University of Agder, grimstad</h5>
+        <div>
+        <p> The first semester was  full of exploring new things. The IT system, the library , online hand in projects portal, group rooms, twenty four hour room & presentations all were new to me. So now after the first semester, I have made some friends and started to enjoy the study and dorm life!!. That selfie in the middle was from my birthday party. Studying & living in Grimstad started to feel natural by this time.</p>
+        
+        
+<!--  <div class="card-group">-->
+ <!-- <div class="card card-accent-primary mb-3" style="max-width: 40rem;">-->
+    <div class="card-group">
+    <!--<div class="card border-secondary mb-3" style="max-width: 40rem;">-->
+<!--<div class="card" style="width:500px">-->
+  <div class="card bg-light" >
+    
+      <div class="card shadow" width="20rem">
+      <div class="effects">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/ZRHFg5WQ_OEkcZgMuy27T5qs3VRrSAN4NIEjpSFprsYFyfDmWuSEhHhzdcqZ9QTvsiMA9Xlk9jst5WPOqUuBZv1QniEaTzKz1qSHTUFfgjOh6ny86VGZutB80zjH-wVkK__S4ko-2DKVsfdMW12ptRtPF8t-i7rY19J6gLdMoGJzZ_m_bzvF5ms4KkY07-X3MjqNge-X2ZxabgyT8UekV32sMW8aOZhMu2cXqNZxuSUvQhe5clsY8sxEem8KR5fmBqE2icRoKedNZLHipgeDgH63GaZ2YvXNfmhSo8veQMK18zl91BBme8k2QWEdfPPeo8XsZLjwrfiLDAlVNbyAcQs6AMJ8zblh3J3lg9jWWU6GnU75d588AHdD3xLrnyGFLKYfhIb_A0eSvAHkTksRJISnqveAV19e4gECdxmWMLC1BUTB4dvyVoNdK6Goq58cMmBFZz7DP8R8SjXK4531MPgLfIBha9psIjRZaB5ZOkMT7unVfwRxvcXSCfKBJ1VJ3fxNbHNgFN1JNCR-YbrAopbLQ9ZxafT-ZllH-acNvF8SwbIK6lM802apO-vpZ-XLRtgMWF-WQorfd_Sxs5XJaBLYebfTkZeV2uaWDlAQ7TbODR4Kb7QdRsNkboWR6PjQwAivetUmDitOj1LY8sbxSLstm7ilv7k=w811-h608-no" alt="Card image">
+  
+  </div>
+</div>
+    </div>
+  
+    
+    
+  
+
+<!--<div class="card border-secondary mb-3" style="max-width: 40rem;">-->
+<!--<div class="card card-accent-primary mb-3" style="max-width: 40rem;">-->
+<div class="card bg-light" >
+  <div class="card shadow" width="20rem">
+    <div class="effects">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/lBWgCkeaUZ-O6L0sWiW-Rxaz5XQXkbtaQl3yCQ35aWRBkPqJXWNQgQJgJPGue575jNEqYr0EjNUlZNYyk7uKpfgajBy0SsN2wG5M8xQymKR52-wq4iqDb1AMMXtoshvMhYJiPQBc2gUoHwdOtW6Q_Pg1aTbOV-doYyG4vbWH86UwMOkMnGFHfHWTT-VyN7CcVHLIwQJQB3-G1uaK2dIhFWk-AUoy3I5e4haTwvNJSe5O9EenkZVc0orQvZQ6s1Zs8GZjtCl3IFdTmXTqHVD_giSuUbktSBZe2KtuI9xC771MOaWQG6_0F8u-Bu6cjH2vqYa6z0pTt_QptCznPgUb4s3hD9Exf386lJhNzOmGBdbuohf61Uw4bwaf7n4aCONGZI95zhnWf6KJoCBfCdhN20L04Of1gfEykgLLSWP5oBdLGDOMr2Kh68vUeGPf-gIIyiGznll6vhEHHEVCg3yiYsUeMmoUEUkHzQnEpQj85VsB885Jx15UMa8HUJpPbSTGqPiEqO94yTDlnuS0fGYPYXxEQFaCqQm08tdSF9fWuviVCZ9eZDuSnYy_6poqkFI-Q3yruhrKv9M5BZg_oEZN5L_iZS7n9XCpJgpYXpUI5bZ_tsrll6HaxcEF7uyqBkHmVjWb5AuSK5yiI9lnBOYVez1rnozKzsA=w811-h608-no" alt="Card image">
+  </a>
+  <div class="card-img-overlay">
+
+   
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+  
+<!--<div class="card" style="height:500px">-->
+  <!--<div class="card card-accent-primary mb-3" style="max-width: 40rem;">-->
+  <!--<div class="card border-secondary mb-3" style="max-width: 40rem;">-->  
+  <div class="card bg-light" >
+    <div class="card shadow" width="20rem">
+      <div class="effects">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/I6DksiacVIRoFZVW9g9NE2Tozqci4QaFbILjKG7MC4lfWk6kS8BF3YWqNx_4oaQRL7M3x5nYVWYmwWiHshfH4LXLNMa8yxAS_jVR9C9RPljWY0bFm6GBk7Lb1B3G9x3h86_KfU6DsDibTa-my6lyu5E0e9NO4nPFJqN9j2owdO99xw-hvFjZRFur52uVsZHP6JkA7elcJqRLiG-gQMQ-dYqFa1phk7KUVDy-TNFuzCPlKB41HxZoTGjq05RBP5S1K3Kaidkre0DQ-BMsMt22xybpg2dteu-0wjjgShXuaQPAhMiHC4t-b-4WWnPTcnC9ZN4QBWCalr_c3bYoxzpRS_d_DAMblNdnQ18zhfr3kWlwh9TsVuIC8hAXpYNtTHrsNxVgMj8vxuapw8x3KDQaGDO8YEYjGQgsBctPDOf3DypXUiX-fVhgxvpiu2bZrOVgQTK7heg5yYW8PJqcNwQbF8ksldE0RjyQKRV3fuLBHuU3v5Xc9RykI2JKOUbnXC9Two7GMQpkx3xgW2DHAX3vY7FjzvSbyfXnAgSgdS9piiWOfj-2suPlbRMFfIoRalh2H3uTM6hpEVJ7SiWeBk-ieLauPEkFpd5twtjuYAc548U9X-DegpIq5GAvq-BAsrZ7AC4jBei4ZJlOxHq8d_2D_Zzt26tWCfw=w811-h608-no" alt="Card image" >
+
+
+  <div class="card-img-overlay">
+  
+    
+   </div>
+    </div>
+  </div>
+
+</div>
+</div>        
+
+
+
+
+ <div><h5>My first euro trip in first christmas </h5> </div>
+        <div>
+        <p> At my first chrismas in Grimstad, was depressing. But I knew university is going to be closed and campus & the dorm is going to be empty. So i planned a 3 weeks long  trip with my friends in chrismas & new year. Bought the tickets way earlier in october.I have a lot of friends in Germany. One of them was living & studying in Berlin and the other in Aachen. When I was planning for the trip i found out brussels, lille and amsterdam these three cities are quite close.I went to Berlin to my friend & stayed there a week. Then i went to aachen to the other friend. A friend from sweden joined us. Together we made the trip to Amsterdam, Brussels and Lille. </p>
+      </div>
+
+<div class="container">
+
+      <div class="card-group"> 
+
+<div class="col-md-4">
+      <div class="card shadow" width="20rem">
+<!--<div class="card" style="width:500px">-->
+  <div class="card bg-light" >
+    <div class="hovereffect">
+
+   
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/8GhjpYNUN0RO_lBF3V8uULEu4eYi0t60TitbC8K_3oqnwhLOwWI0fzLje92w-uIHDPR0v4hOChpPR1fyrocNhR3JsbJwCC5EJPkhAn9oPq80dr1Ju5ORnRPsfMSINPXq8XhKP70Daxx_81FLH2MzSTJlAF-xC7yRIVZSF5XblWuwyswqTDyB6MwsKMBbRPPLK5wplIZUOj3fuynYjwO6p1utiDbZGaCKn9_sMAx6tmJQEtllnQ5-WlS4247FP-dU8Wx1JUXI3xh3sL_VoO1pf0_JBWu8z0yqFlpLGI2OIleqTBJ45wY_H8jkmu5hWOVlS3mF4ejfskKJyYy8BIbbZVcSaU47I69nKfB4hmsU5u-LhWWN6SbgTWfroRT2sRd3dk5lcAxILFqW8owzIdtAUM3JEkyA9JXH8Jk_Oj_s-LYVvGpgzl4R_XfYr4-L9_ekq0JXBUSLTa0Xl8q1B3FiVzIWxvgpXIp7uw0q-1gPd-qC21i8E_cu83NJ3KiGO6uKPP0A5ws_1mJB4Ivvv7VR0YIee83CR4rkIuRnVI-AMiQjZm6PtmMtC0egj7RwzgQJewQIaFHFw8mzs7CsDLLLe8mMliVMJMN4xtfI6OCTRIjughhOvcXita70LXPxVGla-bb3OcFTShZuwCSjJmiwua6FS2T5gww=s608-no" alt="Card image" >
+   
+  <div class="card-img-overlay">
+    
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+  <div class="col-md-4">
+      <div class="card shadow" width="20rem">
+<!--<div class="card" style="width:500px">-->
+  <div class="card bg-light" >
+
+   <div class="hovereffect">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/QuOzuxUACYSBvxozS2CIKCYef80V0zS10Le6Vag9l9Ki1Wo9SBpczhgNEBuNYupxwZq1Cg4Z2o4elVpn_DEVGjihBxYgRZ0AZ6vARevmRnwhf_hDNl7KeN9mQta1Cxv23_qHCMXJqfuhBP16uPrSNX7WoXSd-zecLNZgWTqu4lA4sNo6QBnuJFcXn8PBe8dctLKPhAkfkX-HzSSf4mArkkoGL_mTJuASY22tvqAmafI17KNqstmdz7EYUYc5K9CEaB_ly1SKgPvC4b5o1CBVwywQsjN8wa1GJUTjHyedh9MprjWbj6zQi9eP3_ImWAuMCNKeVk14yn_MKFtMfGvgoL8dnWBo98Jg89mk3g6n1RDf8lTgSfAPyTlEvD3ZdpuijQp9-l7uvsGolX9lQHWdthtUkUs_ZtVCFXNDgBNogisTe-GnYp1Gf0xPfPl52oJY91-pjXqjHFEYtbqBYqd15_7u-iaCHUDqS8ksVVBMCkXrSk60MLb9cLVheT2_lrEG4VT1Df7QVDI3juAMwN4-iTvfau_WXEeV8qBbAf0lu18Y1DsiAUi6646aUO3YjOS7xFMVQwhOXcAmuSGD6sQuY11rzTkuTIRpetTAKbzKLC_iJpxooZ7gr9VC2cgQeADEfWoOT3Zac7KomWgbU7OwSCGOkoCWiRQ=w912-h608-no" alt="Card image" >
+   
+  <!--<div class="card-img-overlay">-->
+    
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+      <div class="card shadow" width="20rem">
+<!--<div class="card" style="width:500px">-->
+  <div class="card bg-light" >
+
+   <div class="hovereffect">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/E5Ft30RtkiizWD0AQLxWXElPejDbMak9mKlo5ADwkGYRpzJ_A-THzuL4q-b5CcnIlLRoY4O_VjNGP8vCovbRwcM6-Tjxl_TSA4kjs7dVZwLJzXYSBZRPSsXqHYcpRSzhEQx6PAaQtN5Vl8ccwK6tx_UvAfV7VOGImeAGPedcY9pZkz_cxYKevbtj0T_xB861UOz8RyXTFM2ZmDkNp4aiTG4jz5YrtdvN9Mn0NB0Y7hs1XNj43iGaX1D3vlhH5TAx10iN1-GMfewEIIbVTN_bO3JORY4hTje-6-LfQtrw9K3hN9lY_8xaSffjZ7EQIAn8PswyclJcoLBEcQ2aWbWOmR0EPCbhk04FQzWOsAkzx6uhKoJYRaHDLYLFWVWPvRRfuYCoUvhwQiE9OBHGnbluaqB9Mj_coYT6oPeppEIguJN5T-Ir7xcdG4JjmP0vi5XKWcZWQ9lzHZdK2rILe068KHO5w_FOL3Bxb1m07bSx_M67qe_psrMRPmq7rPrfOsfAFpn7aI2XNCPckdSVIgTvrbAtG_S65i2v1f8c35676NcjmTFuDFaawmX0QL8ZNRyXopI7QNT3m7ryZDJYmKMazD-KK-O8gbGjt7ftA2VSffJsJjJUR3OAoZZWN8WFGfXjLh8s5hinCF-lMxVw1wi2G8VV00u4dfw=w912-h608-no" alt="Card image">
+   
+  <!--<div class="card-img-overlay">-->
+    
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4">
+      <div class="card shadow" width="20rem">
+<!--<div class="card" style="width:500px">-->
+  <div class="card bg-light" >
+
+   <div class="hovereffect">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/SnRNR0GNa6xU-SVUY2fqvndkTqMJdGZEoieNGX_bBUnl05_zuijkXBP0pSQyOSrcKQwHHzxonLswmfM3McPAkyTcG73Vi5fkfRdmK2HEqq2Azs6u6Q2_Vyx2f9jgzMffgUjKqyFX2tTLnJW2eK4DrOW8RccVqUyx3Gd8rXYcPimSvK2TbTGHIltS8ObR3Cd4a24k8o3QOBanIeUSLGhIquD66IlWFOUN5JfVCL7rF7HAaQ5tnjo2-XRIc5TwDTkHBYi8FYdSLHFHzCFZvQCV13IZYmN50dneaa3hNbMeYzEXh4pfZZkQp8kaO0sscEclyshbfiemrQ4NaGq4NS5065UtnR7lJGenSqWfaVrHlVfRjNZoUMbdwp7_mdOihO2aTRizLb0ooR1--r2EPDHRgFnFwN4_j_QoxC1GUnQ9Xk5qeD972KDWq_IJGZ2Ivkq5rw1NkTrwpCvwQEDajBjNce4RnEeDXosCJyEI25PtBq5NYVCf2ULFH5kjJKNy_4ZOPLGZ3FxrGfLwfYMpg9VWv3g0oBengKNiZwkRFUcE--ViPbyM9uNDco4Q1WeqHil8qgLwymMIk67uFhT7kO5cRZttgj5U3dNRYJiEv-fi1dEqLkQhoBqY1WFKGVwGNyyXJh-p1AUYBijLiW2il89RQ5C7Mq5m1GA=w811-h608-no" alt="Card image" >
+   
+  <!--<div class="card-img-overlay">-->
+    
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4">
+      <div class="card shadow" width="20rem">
+<!--<div class="card" style="width:500px">-->
+  <div class="card bg-light" >
+
+   <div class="hovereffect">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/uH-Y3nZ7t1XTMk7a8m-cMSUTMeszhDQbNXy9_7BVJUcq-3p8uxO2aFsGzhHva0_s-SEfiA9xrV0268ArqfC4_w0-YFpye5znX92QKUNue1yZ0JihYC1_EU9whQR6PUgR2BJL3JzNNVRV_Od7zjtGsSQSYjZBxQsYXwro0F2e2T385Jn9tsNQBGS5LHqGLE8vlxaKfJDnLQCox4zmMnSZP69aNeuOIpazhvcdCDL4ODTDZP9uky85xb2mhI0bMPmJix6Bm81SP_psugem4eTgK1-CKelyJy8xm21tb4dyx71_GQlsD2uONxklttBy5S5uVDi3LBah69tCo7qLqYSkMCf_xFnsCmFUwO5w2yfWsmlm6qvfl6LpsVWJm9SaiS2TrtdpiXx6EDDO33RuuIFjBOaQW6lAQu_fMFM6fq3Un3ISpG5smix0A-NAFrbHtc48i-Osen73OJT8A12lEqohReqJvAUUIYfH7_q51OcmpzNrHEWKI-P7_QlpNghZJPS0y5kKITcLFmLbKIVmpPg7PU6ludUN-kGGEsGt7fRJUq1KK7V532AbTYwvxRP3egbMOwwmEyTENhCB2tU0_8y3GxFCW_L4K73mhti797YMYulRM6my0KPmu82zHvSc1aXN961uHFEc_QZZtIj9ErHgxq4spp3-wuU=w912-h608-no" alt="Card image" >
+   
+  <!--<div class="card-img-overlay">-->
+    
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="col-md-4">
+      <div class="card shadow" width="20rem">
+<!--<div class="card" style="width:500px">-->
+  <div class="card bg-light" >
+
+     <div class="hovereffect">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/BGAr55HcDRfWasVxZ3rqiQdQBg1AL9Sz0Ed1qVPCuM9R_Tt_EDb_eBEwc1PMHWahrzPBU1riZtAmxu2Cc8rlvQvkvknrdtjMNVdu9cAw_jPEaOjtKNfeSxekrXtJNRZfMwuckbvzKaceyA8eIXPNcSZu7WnnNJaJg8v8rDnCA0xCuCow7MoSab6Ityp7nW7EV6zsqHwmH4wrEGosAQdWD6a0ek5jxVtSW6PGpERIHgHRSLkjY_S6hSwWfhvR0nZdp6IyIYxrW4L5DOrdIqzKYbilOhVkyKfwR7JTeiFxVJdr3N7xtQ24xbNSXZVt3GQ15WT43n2qtqayvVxzi5JLaxAqTQdV6UF5Hf_ayKZWiO2Cz6G_XiCakEZvbEF_B9B1KJ9yWdirZ3RYfNtuYWLNfrsDOJii0mNhlhktSMxNPpiBCfcNQ9cmJsZE8QxNIw7J_CTrDwEMxfaPBH4PkHQ2IRpjZtGWnodhFttaLecLJii1kAwBApfwqgIykmJBwd8P-sMNLK8nYHoMi6q16G0mA8MEsFShDIov7Xb3NA-qo5I-S3r43h9pyi9NHXlO9c0ayriGx2EL143bVDwIFOqOi-cs_HWZyipcPva_0P6DTLuJpXg1QsPEPAKZJOp2U1cjkhJSu6-299BuobG7prp3McL25is2ACM=w811-h608-no" alt="Card image" >
+   
+  <!--<div class="card-img-overlay">-->
+
+
+    
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div><h5>Colors of Grimtstad,Norway. </h5> </div>
+<div>
+  <p>Grimstad is a beautiful little city in the state of Agder in Norway. It is situated on the southern part of Norway. In the south part of the state og Agder is called the most sunny part of Norway. My campus was in grimstad , so as the dorm, where i lived. The city had about twenty thousand people of which, half of them are university students. That felt like a huge transition from living in a city (Dhaka) of 20 million to shifting to a city of 20 thousand people. It was a nice and quiet city for study. Not much going on. Being a coastal city it had a lot of wind flowing by the sea. And it rained quite a bit all over the year. There is a saying in Norsk which goes like this:"There is no such thing as bad weather, only bad clothes."
+  I understood that in reality. It can be really cold, but does not matter if you dress well. Some times it felt like i am disconnected with the world. But the city had its own charms.   </p>
+
+</div>
+
+
+<div class="card-group">
+   <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <div class="card shadow" width="20rem">
+      <div class="shine">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/6NTIby_VeKdWlLTWCjSoqiZrPz-kNLxXzc6XV7Y7QNX-G7Ow5v69LZotfuyql5_qX0Z9CBsEgW4-_niwydTBP5yf3WzCB15g5t5Xn7N_F3TG3v4nkyJ9ZPrZfT4p3HAI2kGHjHBICIIguY90GYYRgeBnjhFaf-EAoP9V3NmM0FYrFG0mAlO7QmMMFPk6lFsR7PRf2gm1tRVc4DUi6Y4z5pvsBdnrmPMXEMw1_CPmvOJkAmRjouaUb5tkPshWKIaee3grJgSzDRPZvhuPSBEP6LTD2TivsSypqTIoEg2U21te9tB13_sNGOPeviFV49vG26JtrMcIE1bbJYpUNP-lRfnJwdWRt9-kXkRTAkMXMcfMiMv6UzaBgJcLv3ulxpjeZGIga2tG30CXZH5TGw4NT6KVjEMKxMrbiaBhw3fN32tFVo0IksZX8kfo94HjwuJas7NcnhGdDBhb-IDg87KdFSy366nHVaW8Tdam9Qjcg5FA8KzBcx-ZWsrlQ4L1m6KFeDz3Io_xT5Y1yr34CnbUDlBHN0zWVPOCLvT-euBtlik0US_rkwPKtObZ33NdfJ-4gz8bS_hJ0KTEP90_aAmfrJcloL22fAXBnyWS8OxQ5Q4kQNyRK9DHKBivq_02_pzDufpZSDMEY8eI5WP0FXkYfkCMoIMuW3w=w912-h608-no" alt="Card image">
+  
+  
+</div>
+    </div>
+  </div>
+</div>
+
+    <div class="col-md-4">
+<div class="card bg-light" >
+   
+      <div class="card shadow" width="20rem">
+      <div class="shine">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/Wl9awNM82PfUqwsTwU43jw4z06Ummrxxf-Cenq-qUISmM9JpVqa4X-DkpM0oWOolzfIo0yM6pba6oyfpF2KZ9KqNPjlY2jygLjgR_0y09eE5EVfFZ_auHjkmyCu40QuFtpLD7o4T9QF73rWxZrniN2paUucohHsDfesC8ZQErshCHuS8I8pYWkr3W2O7xizqeacJzj-6mlqKQ3g1rPyIE_73FpyI7DOYGB99Pk4eNxqE8orVzDCB0aTG9QgtSqAP9Qv88ZO9Sl631ydRsKGxLd2mytCAK8GtauszjF9sVXKv8bHg54BcfI5G6tQFa0JhwmC_ipwTABA4yxZm6afKsrWu0nod2n7_rLQUTmfnRAehSa54rUB72wLGFx9NYlr4h0g4wHVfvZ2TwPPv0mfGlx1QinFUuCKNCDSSYotH7xhnRpe9tq6w3S3HANBjKONeW477AO5cl0G1pJRndyLnEPi5IkUFrBisVaaM7KAi94RLzR0jJIqmsi2TMarJXJiiQC6i--6dJLEGG_gC8XICP8-KRsvxXooQZWX5yGnNGWCv5q3USBjJuwbAfeBUplflqxuRV1DaF1FyLtdYqHwNU82I2hDZmJIBLztaT-IoCO_8ksEc-1vXWZUlWCwXElaNHognI4a48Ptb_uKzvDLo9aGUcdmACtw=w811-h608-no" alt="Card image">
+  
+  
+</div>
+    </div>
+    </div>
+</div>
+
+    <div class="col-md-4">
+    <div class="card bg-light" >
+    
+   
+      <div class="card shadow" width="20rem">
+      <div class="shine">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/gAETApf3zSPjJlhv9jysnzwHVBnjK18kftHUbu0YERz_s_6BpcwV4iQGbNFgZVepf1qOYcq34G-yO526pm54B2SBaxALd7EKakoER4MjxVfk74_o2u5SK3Uy8_nDuxE497fjI_G7vI0FekE9tQM5Ax6Wnzr3IAzQmWSPOGKrYngflqrLjEXKvxoT9LHg-xxfWQGfOF7ZDBucQAtyUAzaxtqb4_4mQ7SaKsXh0MudKr3CoNjwUN73LXGOJiXc53lxAHhQALKev00gI7b5alpo3VsslTqXRKsB4It6A57BCM0GRM3tt8RI74QpErCSAf0JpKvgVO4ORGD9iOihQZOiYRkeQRVsPENUJROymZ4Gi45UDuOrGTHN5YDTRn51FETDkWUlMp4dz-XffexM-xwrfu6JeysLSJ_NsgwVZFzE9fHaE5MlDTOJhRTVdxox2JLW-dj-1kUFBN4vpYVbBm__1YoJ4U2Pt4i4aFPJ1dl1y83gNXB58qUxa5p-ma9Q1MMSUrkcwSPzuqYzGjIVN-cV2eyUTnPH1fohwbScPOv4CxhGJUVZxiE_yVtCyU5AYmPF0R5Z3Zmu7dYY_eF_DUpn1uFV95uijoiGHWsgxL7urrJPqjtMEOG8pBpCIUn7yzHWnjn2dFR50Rz-h2VzMsQJdTNyPYlnhZw=w847-h608-no" alt="Card image">
+  
+  
+</div>
+    </div>
+  </div>
+</div>
+     
+     <div class="col-md-4">
+     <div class="card bg-light" >
+      
+      <div class="card shadow" width="20rem">
+        <div class="shine">
+      
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/LPkbcNFTPOr7V4pMJWeLeC4-HeX4nbDgh-SYnOirtvsHsQdYUhqXlthEdZzUNK2S_-CtsIqtCLPMq0IaZXSahz3DN5ZovxgNEpGiuxizfQoJGdAfnfKIf8HkOD-cib8-1nVb-3JSswF8ziTTlw0nyEiLdnEGCMCjjSIPCx-BqZiJ2LP4E6kTjFpNwPiWEN1V_cg8nxKyEsK81vEO2KHgE_LtkE5PyDB2j1pytO1wzBQyjgX1OcPKARijvT024MaRvV1X6zNvWwhHYj6jqiFpFodMb4bVvgLEba2lR-mGN2agcdsEbO0uDGISgg8gCrwWqjy7NfrBMEXmJe-xM2X1knMPdaaE0w9pFhOARHR5CX0bXMv247q8iwtrmJZbqmvaNrCm5N_ckfs85pCkTB5apXZk0tbk-YhwYxDZUKggEIH66mO9liJCdFXyeHgzfQOxB6R9miCCdcMhOur5cTHQduHL9iufYPlmm4oSHh0UMC-eOqP1w74UGqPBxlKGp1oQXXNUK2Hn5PgdZ6wRYSZtNelj6AYpYQzN-__GWF_iaQlL5rXxazez6V1SFoVCdT8OcL5fupWnGpMd82NOffUaBo-UBhz991fz9wte6ZDgn7-c3_l_y4bPDIQ_FnUT9PUp6K6I4nADRpPX9idu2GCfGC-zaB8cQr8=w811-h608-no" alt="Card image">
+  
+  
+</div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="col-md-4">
+     <div class="card bg-light" >
+      
+      <div class="card shadow" width="20rem">
+        <div class="shine">
+      
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/lHeUqlgYSQ78anEVOddAqRWov2t5VuXpnd9hVtiuhWVdLp637u1E3qx4WAWTE2hETEsjRnIzu0z7wAwrvIL68Er-6ZC5Hza5KBoWYitCIEuoYCgf60qWFzDJlu9PLaN-GN5L2CTTJieQQ7uTpWq7UTpdvvsbuz__tj1QtQ4vQoI557oek75NzVHkElZ8RsR0J391EuHXphIPUZ5Ol2XOTOglu2YEMTlWDowsJKie6x2ClHlVsjuWAjM8y1PSpUf0BOgcgCb6s3Pyk8FEZZOBVvWL43__fY4Grpho762qQ0AazewSNSS4fGddt-iY6SFGg0WUW11TcolxOkmTf3Chzpao4ZxQOMB4g4nmhbW0NNMUDRvcUm4y9EZRySOAciqOqGWDjYwGN3V4nu2fAyqiqdowxGBZOH7ywGqJdYX0Hmx1f923Ndrw22H7rkqR_ubRIkUAMNE4BrNeEF-nNxVeN_NUmsqr1niQC6cs12yufoTyi8WZkQxGYh0e5RINqqrZlOdn3wLWxpv4_nbzlIvHK0azzn0KdFqepS8WEUAaCP8l3ht3ZfYBSAp39YXhQGhI7xGsReEfAl8uOSpISRfhJzEXutP1hr1d2lkOL6Bgxl5TvfUBdobiOaH4dcBhCyATqWA-oRa-3GoXZKz4Skra6naT_n8WGEc=w811-h608-no" alt="Card image">
+</div>
+  
+  
+</div>
+    </div>
+  </div>
+
+
+<div class="col-md-4">
+     <div class="card bg-light" >
+      
+      <div class="card shadow" width="20rem">
+
+      <div class="shine">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/V2wQpk2N5wq-f6K_PhpF3giurqaOduGq0CM3YxhyZyJW8xgQ7234gGsowPkBAIDu4wLdznUo4awnBBWek_UjAZq0j-P2TRGwiNeQzdMEAST-lrTB1IDG_HxAWucEv5YmwLAfeTvTH-nq3oPG4CkiHPiK08OOtJrgOL0_wRyeUcfI20ggJFcIRz-t-FUiVPZXtofmze1UNiPuWB5JvcZrOnPjefOcHkS6BoQWCP3ZS7BMEuM_HckZ4ZUpJqrCLFO1hjAnjXELGeLXMW_pQCqWOrU_bBNPsSYrxbgnHtKYTLER-pIOXAL5MMRjnSKg2asEeswEQgadXOENvMLdcMwzJ4Ig8biephLwup5gs8r3VEohSCK9CThTO-UwfTgd9csC5RDFfHOc_7iCwyg_1GCAAaPIcXeYRSyhkWHSHspWcnXtQf2bYZe9_cESRX0f6nWefKwq31PBLqiR9ZL7yiXhrQOKJUmXzypX1I3eMco9r-JRfydwHVe2p1KiW9O71tRir59UAhs0m4eSvHIrzWq7--O3URervTts0vl9N424TvGrrfyS0NYvnr1rNNSUMsL1CaoaQNIBt8Kych9ELMAJdZoQCGbU3e0qgFAWK8T9KuT-vwek55pKfodbxPO-lDmOirPiub-dRDpAV3MmXrHhbY1Gg6Ox8g8=w811-h608-no" alt="Card image">
+  
+  </div>
+</div>
+    </div>
+  </div>
+
+
+<div class="col-md-4">
+     <div class="card bg-light" >
+      
+      <div class="card shadow" width="20rem">
+      <div class="shine">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/8bPi6b281PB_m_5r6C0GTSR8B75flb4NWVfMTyXwxja8bkg9u07E1F1vJfJXajvjSVPQmswvkupP8avaUUXRB7kGYSBGx65BavZIr0xC6kkyBevZxF1ceSkbfemuzK-sUM8VhEjuPocJo08gNjMtSOI89eNOomM7M5wYJv1jJc__ZC52x-Y0mrqJPcjh7BP6KEJqHNEmNeC9nXCQ-RViPmUVJ628hXav_ZbrV8RLteEGSMWQINyEOnMzqK-rIQ4pUj2A8of52yg_Yg8Xp27RaiETtx_7Etvkoh5f5fEw2jWjLd6qTBYhbwQa_0CHezQdbkpKo69c6EDzzEilnyf1Wl-8_R3PGsKBCnZHYfUY3KNQrNJf9yekjq72zfJx6f6L-hYXIA7sDTlMRCKLCKuIkEERrb6LHqeJLN8g24lNNQR0tTyGDr82PrBO1m7WBW4hf91ZqWuBQGRnS_zQ_9Os6I8Abv3duVB70d0HhmTIPe6murQs6lrCPDvD0wKD47Icm26QIS_Fi6GTPq_3dcg7pDBit0Hrlh6dPgGepZe_GPaVdZG-lydqfYz3-NaRSAgJ2reYUnag84raQyd4leioOTnC7tlWcznlcAHwSnUeMBpNnenN8JGDDsWVG90ZkOJjaIw1kqYOLfacphLkePDNJ4aCvSVnZdQ=w811-h608-no" alt="Card image">
+  
+  </div>
+</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+     <div class="card bg-light" >
+      
+      <div class="card shadow" width="20rem">
+        <div class="shine">
+      
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/NLfjSAHL72WCko6TQa-tCRPgs5L5dFluqi_NDypv2cleZkaNfRVfGydwaMQVnuV27fbWqn7G-TSqnE003APNa0ZbJhKaGM3UXOO0VzQSDomk7IoVsOYG9c34_WQje92d-k6Wzpz8qb3yt6J326rLepBcMPGFICbfMkSETvi62gx0GlqjHO3yXqoV5wjPArMMJqshC3mF-8oq5sn9G8h124mk5PxBWOoPB6oZcz2NRUhJTvQSOFziSg9EY_yZ2Bm6grqiJnWVj6MYfL21OKK5stAuxKE9LUeTegTSw4UU2WlsJPOKpRUBlW8ZDmupPGFODJHPtvPPXqZgQrVRf0CFWsCLCJjhC8jVmZlu4hMI74JSMaGxOFPd8w3cLmLzI8VBSOWwvUWws_7B8GMloWY4-IyL40Em_hQdTjqsfM7Mw7o2h41HHLumTAzkHcdhIWv7kNyK3_vFtsBL2KR7xTqo8UopwuAI3AnFsk6kHUmvAUr6hxE5mXljTRyNHJogi1kXJkD6zqKX2-z5GEJqVAS9tnI5pS690zNhmA7uqBBU4YfDa0-848M9nTWg5v1luhvihXyLBVi4VOK36kI_ldnJBQUrLJEEmtR5lGPYMvC-3-dXOxvOjx0Y7GjN8Jog34z_0IpvuqvS3ev2l1xLl1Zu5XFcbts6p9w=w811-h608-no" alt="Card image">
+  
+  </div>
+</div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="col-md-4">
+<div class="card bg-light" >
+    
+      <div class="card shadow" width="20rem">
+      <div class="shine">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/JJsWNQAKJi0xTa5EwVZAkfHp9qR15D3rVpiMnriONu3uMQVurjupSqdL7U8pgCjDR7OnZzWFpLyq89286pBSREa6oezOYXUxYRkWNDNXrMKtmYF2YVvQeXB2UoRvt4YFNyUD0AG9RQN43tYdzmWJkbv36vIGRsgrvKI8L4HnVEtJSG_5CgNAYTYQBkmTGSvThYGOwOQX7V6WCOTmubT7kmpUe0Cb7MKMNFgL5kbK73XBRimHP_8NfjADxOt1u-gIgT3z6k0sS1UwpZc7DOjKVQaDTF0g2_VQUjcigmKoDS-E9ackUB0o3Jv6xpWkl1Fj3qdu37xmJkH_yWQ7RoC7olIORhK5ywkuoY_16md8dIo2bW1ENfghuJrHlpG7QUJgr1cNA6W7VYGoEmAvy5dpDXaHHbRbaT0R37MXPGSRARXOUONNfMrl1id3uGp1k_5lXg0HUyikD0416GIIhM46Aak2v2nNqt5Lkf5EQWaePrhavcfSXKenSScoxWVo032iOOhfjOXdnYqpvWKqRM_XMoCFIE-SdhDPJKzeg5Y2C0-RAodPfjXZWUvfnfw-EHHgkzZD-5asg-G3PgbZBX1zb2fSoeRXjowXpzcM_LyQgkuLgoVfhfx262pA0FSls7G8pj2PWb2dlkKqf4CtjoBoVmEyF_4u8W8=w811-h608-no" alt="Card image">
+  
+  
+</div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+         </div>
+      </div>
+        <h5> Making friends </h5>
+        <p> Making friends was not easy in the begining. As I reached at the university in Norway a bit later after the study start festival, i did not get the introduction with all the other students. I went to class right away, after i moved in to my room at the dorm. I found out i was the only one from my country living in the dorm, but that did not matter later on, as i started to know my classmates, people living in the same hallway and the building. I got to know people from all around the world, from Asia, from Europe & from Africa. In my dorm there lived more international students than locals. </p>
+
+        <h5> Finding work </h5>
+
+        <p> My education or tution was free at the university when i got the admission, but i had to cover my own expenses. As grimstad is a small city, there is very few  work opportunities over there, if you dont speak norsk. So I went to other cities nearby like Kristiansand & Arendal. Both of the cities were around 50kms away from my city in opposite directions. But i found a part time job at a place in Kristiansand. I had to travel 120km everday for that job for a long while.
+        </p>
+
+        <h5> Exploring Norwegian Study system </h5>
+         <div>
+         <p> My first semster went on a rush, before i realized. My grades were not so good, by the end of the semester. I realized it is a different system here, have to adapt, so i did that later on in the next semester. I tried to choose system development & machine learning as my major, but i understood coming from electrical engineering, I am not ready yet for that. So i went with mobile & wireless communication as my major. The study facilities were quite awesome to begin with. The university had group rooms for study which can be booked online, with big screens with HDMI cables. There was an IT department, where you could even borrow a projector for your presentation practice. I have even borrowed that, for watching Cricket world cup matches in my room. The universiy had a 24 hour study room which can be accessed through the student ID card anytime. I found out the exams are quite precise & all about concepts. Concepts of open book exams and critical assignments taught me a lot. Some courses had new assignment with a new coding language every week, which was challenging and taught me to come out of my comfort zone & explore the new knowledge. 
+         </p>
+       </div>
+         <div>
+         <h5> First paid project with the university </h5>
+       </div>
+        <div>
+          <p> After the first semsester, I had gained good reputation with one of the professors at the university. He offered me and a classmate of mine from Nepal to do a paid project for the summer, from the university. I was so excited to have the opportunity at the time. So we had to make a web service to illustrate data from boat sensor. A boat comapny was funding for the project. I remember we struggled a lot in the begining, but did manage to do it in java with proper requirements. At the end of the project we had to give a presentation to the company with our professor. In order to test our new built system, we got a ride on the luxury speed boat with the company for an hour. This was my first boat trip in Norway. That was my first boat trip in Norway.
+
+          </p>
+          </div>
+           
+
+    <div class="card-group">
+          
+    <div class="card bg-light" >
+      
+      <div class="card shadow" width="20rem">
+        <div class="opacity">
+      
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/VYtY_s2l5gE5nK6LSk6a2d4zTOJRUNBAFavwlLySj7EOeY6lykDmW5ZWD8cmvnekuIz1Rg-BOSJpQLfgn1zK8Tmop9Zf7eLBlkv76Ed3BK3H-o3sj6iBRx0UmVDdqglmRS0CUZHFzmDJSL_GjEVpBYHTR1QXbQ6eYb8tBAOqu9M2kzV8WaCQ-df04ma9ne1RTbg_ejqDCib942mYO2UTnEBBGwGHUg3zLMVchF19cMa27p39whgXiu-7YyyXzGP7UVj0HInySn4X6-RtSa3a8-EogNAGG6aNZVObETQVCVKwgyURTo9FWlNnzsugFnHA087KLtToRZBbhpfIeLG8-n9iqsmDNPPVWqdTeKIHs6un20DaZf0sfI7SSRN8KGYjyhCQZsI87G7ijjUEuyf6_sTGjzQv7mjf6vKmOu_CDW9qmsAENDf8QTJgD9nrzSfVtBu60JUEXKXeH4nSy5J8H0w7s2yUsybvbE4_xMvX9BFobMSmZ0HvTNLgdrNgoSBYYCnydNeAvJaJAICwoo81AlQaCFejcYjyHMRjjC28kvYnKbgKw8Efdw0FPgpPfwhYx254pHRa8AmubBZKVwGMpvsWj4tAOXPGsNjkTMso1KLcZA3EkGxPmzusSuvgSP95TGggfE9VaEzf1Jcce4TXZDNEoZx1S94=w811-h608-no" alt="Card image">
+  
+  </div>
+</div>
+</div>
+
+    
+
+
+    
+    
+      <div class="card bg-light" >
+      <div class="card shadow" width="20rem">
+        
+      <div class="opacity">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/7a12gTMWgM2W5mB0GhiMAxK83huGLHoSc3sSA3bxZ-nQAaMZinlnqb0PNTOOuMdqXjuI2OT3xKviSYryEY5cfPJbY24T8urKVhCGGSMTpAOxDfKaozxLfGy8cazikNvrDh37qzc4ESfcI4h67f0URX3DMVqAAXcRaBTMftM6F5M7IkFe0liR7VktWTuCPCpiEdQFLbc1OvUsBZzFmIDklhxdS5YnS9LrD4wVuUqxS_pgdSYdGeTIdwaQGUA24BAucoXZRKNvFZBVs3PSGfqLLiGTx8xtq0pim-Rj5qO8CUrd0u2EevoPmob8TwlVdPzpJcxnm56JIu8_jwQsifiJTPqKtXcgUZnSvY4bUXZ94Jl8t8ZsBToiQaj9nzLI2Zjw29MkMI4VWlR-kUWQ2ixYqpED0bNl6x1jIP8ckbtnzss5HjxNZQn_UWQm0Efn2SEXPWWHIZm382ivZfCoWr2oaJ0_p-WcMD5WSmKfAUBXhL-QjEkfSJWzCCN7Dza_AnrlZE1Rd-KnMZOY26JGbrU_uzBuJNumhj8olwNg80thKfDTKZgeF46a_R_EYIT9j8xWowzXu3OYuZNDk7lKaFDTNte6wWWONWZT0vINVA8qqmzGO32GTl1zSvsYb3dOZ9e9ajt5TWp9s6FFve2zYNRGOH31PvYu4pI=w811-h608-no" alt="Card image">
+  
+  </div>
+</div>
+</div>
+
+
+
+
+    <div class="card bg-light" >
+      
+      <div class="card shadow" width="20rem">
+        
+      <div class="opacity">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/1qOYSQqFJbKn5V9Pb0yAy9F1KPj_MCoIxvsA337Ji51u_6GP1vXFi9OkkrJLOf0Jm8O-tOHTJdrx5bDaJigcitHUeLLbTtgKtfQDq2p7I6XrhgUMrBI5S3yWOvUMBz9p6W5tgjk4Rw3ncgiZgX05_wYlBBlolpLDYZ2YVoGxdhdY4gzEn6dCWUSMIjuNepLAE-9ne_1WFLoT1DwNf24jz0KKPS0EUBQh5PbiNbe99hb82eEjIgdJsFnqaTTT77jPXeHg8C8r0SCqDRMlIvM5mxsS2YkdHV1tN1rDxxPhcxaOGkvu-woJ-479VomLkSDboo1UyrNbfnQyDC8yXIY1tsXRZGQr8zef5ULDk5OGy3JTQSjtGI0gBEMJIV65QvaRXeCqbKBcc1kPjA9cZYcWtb6e_wA425lJOzGXFJGaMUYiqZxuNEaxsp_Zqg7yNd_MBLYdcbDl99hlaZJALN3cE6j8ZeSvIPwQd6pOqwqE_KMMW2paes0XZWoXkjVYZYKXAGNeRRobHjhX8aJKb2HlkGN81dQYxZ7EuahTGlsrT4DKAm74DDaBbXwEFg_SCjwukIvwUC4MVx2ebGE93D3XZ9dHwxK3W_vWPD9yljIfIU1WZWdSY3fwXRkBwkivt8B9edY2p2NKe2SeZ8zG0UighwuyEzbUlp4=w811-h608-no" alt="Card image">
+  
+  </div>
+</div>
+</div>
+
+
+  
+
+  <div class="card bg-light" >
+  <div class="card shadow" width="20rem">
+        
+      <div class="opacity">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/kaHL62aFj_QmHXtxq2103n6JlWgSyIsvr3MnY3Pfw1BEUT6j3-DqBS-tTfQcmJQahdxPrAdftq1BfNc5uvA33n-GCD3PdzAjCT5AXZPW63qc3xb5GUBVmzRSSKf1LQ5EemRWjBJ9DCf02yWpkq306NZzCL7JwAarTLXmRlyBeVWyqWvG7iMVUwm5JKQksJeomnzsJdIrhPjuaCFPKe7CGatwLFBB8o0epB23Ti4rpEN283Nz7c2kF4K1rU-vvNPfr8P4N1ALDfpA9y7hV-LEZo7NQmKn0BNHzSRy9XjiZzAAXrxRoqcBUyAPG-SIrDHiQbhei-YqiLTz-xAZTztTHzhLGwWJ4ZxyiLXYDYSQki52EVTc2g138KPrC_tWqe9HdCo32X6orfGdg06hxUr5efBYkX9WVaryvaoSGiO1LuJZzYx2unNuHJ04yja3-z17Zm75xxFZvNF6KC8hbcMhOaSDmVhvbf1YaqDVSePMm0hFhNerOox1gJeZEX4xNaBXolkjL9SIIEI9QK0lClKXdSxGnhb0r_7JJ9Ox9EOS7vkPtNFkr22xDLmnoknidBKnFTh30ahUI9EfkKF1_3sIg00Un3On4qEGpocEBv2gv3SLS0PLI3A0Z6yYay-spmO5-5uJw1iglssi8aqmO8Y-SCXWaPhh33s=w960-h540-no" alt="Card image">
+  
+  </div>
+</div>
+    </div>
+  </div>
+
+    <div>
+    <h5> First Summer in Grimstad!! </h5>
+  </div>
+      <div>
+        <p>
+          Summer in Grimstad is bright and sunny. Though it is not that hot as you imagine. But the weather, the sea, the mountains, the booming flowers makes the nature absolutely beautiful.As the semester finished, I was working a lot in summer, still got to enjoy the nature.There used to be a summer festival called SKral,and I got the chance to be there in the festival.
+        </p>
+      </div>
+
+
+     <div class="card-group">
+   <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/BXtwhOG4Gbhe4K93YnWIdpmpFzylgaWrqb6ogzOFCaMV_qGLi5LMWtAp5l98_qV4mwVdEb-Rvj-k_ET8NcqR3pnrRiM-1rT30gRQ46wZajsX_mCqKW6eDad3s1QxMDtbaoTL7SY_0DIEdkMTyhZz2yo2UBnVaq7oT886bSwHSZQMKOaiaz3PwjNU-f6AFKF-tSDEjYwBf4PXOKdEi-Lghyi89-D1ltDgbOdLf_R7k66cJfGA5b4hKTGgj_feeTjK49Sb9YH6--4r6b3p0ObwQ6uKw4IGvJXlTbU8OJ9nXXMQ5IA5osCy_TU8sJx5Uis8kwN629XCIkBKZPIFt01Jh7Iep_uvqhxyqzKR9x7HYD66tWHzjlouHpzLCaBnAbFWsWbswU6rAG9pgzr-e5DFKhL3grALa2wXQxTcMSzVJrsr5ZM7818mfVUTTVBOnJhjhteO1u7PLZZx-mqOfoSMt23cBpYgbObdb5IEffmI5unkU8S6lBgMCQ2_DakujypLtcTKD_vsOrZqu-0CZkFiS69XpP8NhekC_NZoXBXo9Pd6NGgB9k2rosLvY4oNTm7HDHjLBNmzRbg9-BEm38ql6W7xn7dNdaDTwFe6VBrHEpBkbY0E3FDKxWaf8t1Zea9FIOOUDVMQvjqF_yGhz8O_sNfkagpsx9g=w811-h608-no" alt="Card image">
+  </div>
+  </div>
+</div>
+    </div>
+
+
+
+     <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/LjOIsJU3Jaid_BZbhKn4S16M_7YDfAFMXAyj4oPwrIyQMHpbMwYFWtWvowzcm2BtYDvK580yKkBvi_RC_GJ0jvUi49JWHLA8gS_qiW0vbRf1fJVLDe0KAClb16XRTR26LOWTpfhq9wdRUw6sIv1XDf2au9ZrgsW8tL15ggIkWcXvmbhK_Qe_GCullo2NooO92-6EDu35E8AHgYq4xkaSt78jMfvipT3UTLv2zBDDVast7DvRlDvvN0ZweAmwPI4-fLh4zGbRSA9KHZ2pLABBcCzg9reSfSUaL51tY3fyAyoEIbjm60X7a1RDSaTt0k72anwJf9hL4Bo8sQWReS-A1-W9m4s4Wl_McoXIMrLGO3s_l5IKMvsdkvygHJTwUB27JxZl75LWmJxg4dFeGvBMMlvzPK2yq79m8Zprs-pnfL9CqqtiuniFBViCyCgyztoZ3oqKHA1mS6-ilm0SqU42T0wbDqfuODDRT0qwsrDjV1FnHcu2QHaiQERugDGtss9Q2LmtQTiaLGXBh3dEKZnSmPpMWL_YnlSqIgtXA3addp4NtPYGK8c1gL6RStMZvOFpkMOmpZYqJ_mF6ydQ8TxP_TM7SblMCrNhDAr2ghP2RKxZWx27uddLngvd82vOJiRko0EJMa__3l_VKEKTMwdP9L2swxdfgUI=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/y7JywXoyw6b1viw9fnaAemYmByxF_4q3bOfvxXaHIyTnmApfPmA-IV8sLDRJ5iOH4DFHw-aDf_4dCWX88Q7pBacxF20_ygv303xYPURiRVXx75QLvwLpZQkzg84QeIT5a6DkrvqEYhGLEDXzFDrUVdtgnvjToIXRqbp-U-JsORQCcRkR11R9JnmyPu1EApgO1T4vir2VY4VPDPZCbPjSsEcEZWAf_3P6YgmjFBTW-5nx0rSo9zjhqTiAsIkeFlx64JCwsYqSmCnp8KgdtWqjJhaoTE5SbZR9BAnWoiSeekXyKMAOWXhon1AehS5fY7L7jo9KiAc88xMcAV2essqL2fB8Qe9Wy7O6JkmpKiJYhvy5gfeu3Ps3TfSy1eRR4RLuQyk_eQk_X13nUdhLv4jzq-fTg_iz-k8zMOROeEwYdT8ey__h3M5XeW9o35U6XZiRYJLC88dO1Tx9T--OaQbqmA_BM4v0aP0_bpvBdIMXknBMHksqMZLcSETfwOUl9gZdwzvmGVnc84-xsWxcKBkOusB_YEFwStjn1F5VnJhhiSp3Ipicza2cMfuDLueEpOQgJUbC4rxRuWh5vuS3-nt1RdbyMX6X-unH5cCEhlblOvTrIBoWiQxA5_7zc9g3aXUT2lnk8pBoaACFgBsX7c5lYB8lhh75L5o=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/wqITLItR0iCBld0VD7pEo1CTsSv3KbKhKuoM7QMtqxR_3FwWZAiyDQ_7Ha_K1E-CReejEn17GK0noi0L9tMA3U2mNQGdpfQv0dW_R4ulsK62zJOBhRxN_P1_ZoLNVsrjyhEe_jn23zG3eEcTbVWGneTzhUFD39ExVWdVxpvvcix16CtX0mp51ZbYIIzRleW7X-BeTP8E1HDB7KPK2pfzlpCZtmyBJHPi6soqep4o-N6K5DtYmPUOf-CQ4-Wz4FGWw5PzeSlxs5v-gjTrchLF49b3pejAcyUFUOkvkdPfYAt22NzZZ9y1Vnm_-3-0S09SG7dbWnHkICOL6iyd5brfOUDDMggt6-S1w75QuKZvzm1Ddt_RQ1ClzLjYMQFNKf7WdvGcwO1Q_1fM1ruwiBBkrYQ_kujXuwsnpHrrd8qAssU965jmj4aMvtrbU-ognSROuzjLDwTzjTwXjZ8HhLfET1jVlHAKVRDlP60L_gOZNnOduSPK2mfeWYQIc1DXLRAFPThT0aMIAg79wH3r1O5ZprSycvQloda9gCTIg0uoTvbBgG8H_tvAC5tgtYbLAmDMppu7Z5mqLQKhCdg6wYsoC9mB1nKxAZiflS6kii6rnOSWXGr3_dN_o7G4Ioey3jeXpCv4CHVXV1S3lNbig3TLYWkaJuqKBE0=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/1hw8MWJH-3f58GTgSw8desc4z2Tf_dStpvba38jVIkzlOnu_bPHxdFvBxjBQsDEV7qPc4nU41_NTHATsIBx0YIKlkFbKhzTNUK8FTpvYVmvlKY1RRwuf6lt4OOXi3AWUIAhm4FQ58cfwI-wEtWu7R6IgUosjCO0xb11Mu4bFruUB7WgiP0im8aGrGmlq5zu6iF2IdUy3LEOwjjVnwLWKPF-nnLU604vA3bCk5KhoMXYOpYWyQ6sWSbf_SMbnC7dFIz-9qU7Yksi2Op58hR7NYpLPKfHrodsCR8D_z-5zwMrBFQWVUeS-72lSsayjNQ8EeaxYNG4kavqLLiX3Mc0a7PyMVdXEeFLw0FI2xDf7tGg6YadLLBLcsAh0WZ-kDVjvv3eopTvq84nRrxhoLKT9q_Fk5E8UiYXUzEqhKmRt8K_wX9osE_9pngzhxFOEO9rI-Ef6c0GuP3pNTDo6xb1UX4C_CQ4zB2G4BKQrnQRMSR98EC95wn_sMlTNLxRZVe4YUyiKnnSeIw7YzV1bBJlPHAf2zLsAiCKoVJGDDhR31DkbhGDuZd9QFQyHZ2SYcxBS852KcJluJodz-waA-iYzg4wQtZKF-qWQo8YS6Gok1RdUC7tlfj_zU2G510kWUhB1MqYPhfZMExN49HvxSTXNZOLKEhhx8aw=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+  
+  
+  
+  
+
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/XnBiXn1DHxH3H7HZEFsS1ShfzuAz611M6HiZ4aFnYoOIF75NOHjcdyCRTNaYXWN-MQEM8KdBzFRjE7MzKCCZx3ULdjcOH63f9EmdBQplUgWtbGKndsta69JysNSH8YKraGJMH3KZMz0zz_cIYdSZl1Ie-QEK7EKq5FzvETe6n24pS5XGHaIdZRxd9y1bXwvZsGptR5jWk-1232TfsipBdoXMxX1gp8ByN2lMVmqlufwZ4qqiRUQzdSH5ufemRNz71c0JjIFJRZqihbG_plXdWv11vWloGYEAt8LSkcPWJHdMn7Ikfg7_AL3SZHckxLoaw4hvqZq1XfnsTsKmhpmwqnk-zM266hTzXkD-7n_Pw5LuK-kmdH2rP-JJljKkpIbx6-p7OuXuykzg3vRmNLeSPNdAiQkgbR1V5mAVsPF0mqBoc5mxdXY2ea0T7o6VbzPluovsl-QSv8mAbm1suXJJoEpkxhTlQmrnM_8DVM253sQpl9Q5NRBVJhvMgnAva26hp5Hva5dZbuoKUWtQ6b-aq5tFlZKYb-myCV2hqN3kMOxYsGbra0d-E0NKR68_tF60ixxGeitYsr-s-UqrJDUqxQn3MtofHAtUbwmvFW8-KKq1zY6A919OuydNv6ai1KHu9wMfa4sUYbhjOlmXuggkHnFO2Rh_QlE=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+</div>
+
+  <h5> Trip to Prague & Warsaw </h5>
+        <div>
+          <p> As the semester finished and the whole summer I was working a lot.After working the whole summer we were getting tired. We knew classes will begin soon.I wanted to have a chill relax time before we get started with the semester again. So me and my friend Ayaz went for the trip with another friend joining from Berlin.
+        </div>
+<div class="card-group">
+   <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/n4ed2yc46z9qRJgMTl2okHm3HbkpXEvc5JENSqduyrCIjCfLhteg_kEwasDwfkuBUDRLF3EH56Uc5PO4lzsJiTlJrvui9L0alowEaUXlTc1ToWKFu0MXLISwlUwO-z5iqcJE8y7XVUQC1dvY5NUSEMWxPbC29ymRhceY2g448Pwg9VmqjWkNpMvcX62kaxYrcPZ2zfG5dUegHO2569mZRLApX1Lxg8-nXWKoOOQjqw0FemyN6nUGXu2axxVvyH0l4BRzjTD3OJ6aZkwePS9jrdesEO_DR9sCMF8Qo7D0H7u70bEZ_q7pOwxUCmMP-UyTb-duKkaOIKsYBZm2kmOEzmltgEQ-aQCvdS4_o08k8REIy1l6OQn8Wkywukre4eKh_jb9zDP7EIlD25qn0ltvuMbQY8NPfIrxGsBHvpUyUNwYIHFRTKMvi0JAg5r7oKqIt70rdsgEbYwBoItQ4-nV2zY8xMoRpJRB-Lv_Wie5-vDpcv-HymoJqOHBQV56QV7izgIHp1ErtWfkY31O1b9cGw2LPqr0cwQ3x5tCIi1_u6ggkqVTkd5clc3y6RG1-CCc2crORfuXuZA0wV3eBKD3AGbCoFntM4xQrO6xxsIbwobIwFtnDo5e2JmxSFUCQcAGfpl6_a1VqagHWnoAtl-M9qyRgUKd7XU=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/LLibb66bR_XIGOIDHhPJqv3h2yO7uMPmnOubbM64eUK8JxuYPJVNQKrcvVjHsC8kPpj0U3PlOZsTnM6HfYQ8iEMVjLXaBSGX9DxjJyVah85VqhvU0ycB1rQA2yDYdZjh961NyGtnToamy3QTeefPn7cENh_d7lwMw3jSkrF55sRKITsUFDC_7i5GPQzNCMf3ZVfIKP8vI2twa5OXXCvzYFW9nkueQUtqyfTpk8ugpzZHHEqdIsgQBJoTh7fz-QlRjHlWOwzjUy_0X2_P3y5nVGwSRX97tBW7mo-bMWORaOqGdwrAS_trGIrtZYiyIs_UcYwST9r-BUg0VqkwgdgOfcnhSup37P9IcQmO-2eNV5O0tCcAKABQFMP0vPQLoRvUNd91etH4WDTT-z96ZRvBzQDZqnP_Hj8Dcd8OSzAxo1AxymZ3GEYeaWG8EUSCgAJIymB12v0IlV5jXr1nn1s32t-wI2LFOyPuLj4rMGhKisIZPMqOB9QpQ9f5oqhPt5kM14tm_IB03EZ8Q1IWb1O2vFvi-IP2K4-jCp1leDspIHNGnsIEEFpf8HiWjwfWiAs7SMkR9yNKr29LuXwdgAYSqY5oRgHLBtqWjsOEKX12qzfoMZzqYB8UsPN44mUDw8bnVbpPg14mFoVjf28qP_xHFs8iDzde5mg=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/m7iSMWlOyMhiWk37IgItVCnAlSkuaGaUeX0Za-G2zcfGJzwRv_K4PHyq3-GeVc_g000f7sbUTKixmY_q255zzM4HD_TQ1-r8q2OwvbfYnEwk1Q9Sqcbl8DPUDIu7LjxhSAajYpdmMt2EK4BAXsM_ENaOy-CaIfISxfwFrC0TlwDP5DE7vzDrivFlOHS4fmUMvHyJe2DZ6MPg2uMTA7WNrDeC0DfVdmTKcYShaKRo35uCTRKggMcucaY2xJZrWgl9EienDT_D-d16iKXGZKsEQyniR-PBBxucmeGBO5uH4uKWMFf1qZrFrZEhdmTeeCZc_NW8DdczpbA-ZXTKs7Hiyd9TdFTqlZa_b4nPs48Am2tfMvLFj0Sj4S0jlFTa4TjYQdTm4cgT9g39iAykjPJIw4iU9JNMDKIhIHjIkfwhyAm5D6TgTy8qSMOh6sqt44ODau4ILWIZc6WWZv9l5aseSW4ui_jNpMZxtSzZC6nbB5SLNCMIh-4UYS2f_PzOLFEzfM8ziQcynJSgS_aL7jpk7DO9n8RjodqYrsJ4YDOeNTRJ0b5njelph9iUQ9-yEXFRSFcY8oAS8GWAiYiszq_0C6D0cjcpaq3hH6Bkc_12hzDzT8zDS6X1F9LV1pl_c65j0jycEytqCrdjmTOURs7z3KB1RJP-ysE=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/gzFfJIC36SyO6fHXkAKr3QssSz6sCDnaea4KnJWdNijKBjNGCQ1vl6ZIWnxNkOTtN4MhjkfN3xrA2k-P4lGc6gICVaPWNyPKdYlht0RTLP1Rw4DSGn3hd4Ry3kyfSJhs3GNWkkNXE7-Wcks1q1rRYtsEddmpW3utYXa50GsOVdiEGuU5RmEVMk3P9gpcAU_E_azlU3MXjWNmQxAD1nMe7LNt8J2vM1NpHqHuipSC9wPJ3UbPaJRzfN-QT6SlL2ET8dItyzSGlVymXIPPqIvO5_O2-tB59Qjp0dq5-X_CoXgzruarkuWhu_65N7Cav12OlvvdU3nA1D4uOIltT7RNAFzm2UGTlmtO9gHFwDf4DzW6h6GGcHw6AKqZrfO9ILG9trEnbZY7AzmPecM5PqS6AKlZj5LijtREIeoiR3mSxtEZ41dovqyIrjhLQETNjV1uEzuBPHVYlcymQmPaKXs11LNrDGzKM3IzFMTVUumVR_n3QEYvFum21gb0V2ecCzfY8kp8c68rKjTsflGYNOqvy83AEQBBJhWyPVVNhYJsmDdCS9fW2JDAaKexPpdLO7YkTHo54iMVJQQLmsINr5DrJ8E_IfbuuMm1Ag-84qzwW66W4qL_j_e-5WTVAx4nTpRBmTbJuFBQVsSwCtwNFLnoJpm2n13CLGk=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/0u_R17pYVR5W0DoSmEXFWAscw3SmwyX-b8Lwsp4-kvHSmGrnbhYgliCOeyxSwEdabdDtmsvE0ZotNnFmjZ2Su_zrAwTd_vi_8qU3WGEfvlnDI2suL0y5FHwQ-ir5a2-_mUjZ9LdT9GOY1tte2RLmYDnJWa2mNlwdulWJlqpGNmeGS4wKct3gckYpykQPeMhfsRbvA_unousAypRxoe2_1x64UaABcgChO91vk-xsisl3JEIxpQhIbFL2n27QZWpcmk9qB7MdodAppiAyH6H1aGtjMdyOoA9vhC4oUUnqko20US9eKYT39hptHKCZBOa04nJn6gjMr943t0-9DjPsy7ZXhHHThsb9M68Rbofm6qqIumQvkUS1QWfiK5TcXuWvVm2knFCtmue_ydnUGKpPbR2zooGMDLI6QGSlDjpCBIzDmlr-cJRssthNo0UqM3OQOc-X-Br8bzTZu2__RkK_jgdCWssyamQV2t6mrtEGvK_zyCJBJNos6812j11zzFm477GRcVwBLGHcoq6mubsFfULtxrxMhaCEl8dL6NsA8bvOJgTct9QyinHCMwK1QN1lMzAmpxg2Ck3pFyI66t8VaFvL05NcSU4GsCczOb2k3OBoJyg7mLUNz_a9oAwZCph84qYNf75-sD1Awu9J4QI_npSl9YGzq-Q=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+<div class="col-md-4">
+  <div class="card bg-light" >
+  <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/hdXpmb9mfTGvFzuG5Yw6wndVfiLD6TgKMetqFQI_4a0EHMcruGd60IsWyUw6rpYCB4r8eD8Y08_rWZkRXRmSidmVMNRA42YkKve1XYLqboHdGJPJqqQqUc8ofvwayCasd9TF37_u908ORXte86hJYpyibWtgaqB04itHyA0k5Ti45PGcvtt2dAkEuBCgmQWvnB8ZLGpYUte7aCnBpaPz_HwkozwSG5X9Kp1wPSOO9DtxzBB-fXOJAlsafKjn6YQAehey29TqBpUj3bK-M8XJ0Gz4xeb2KquN_tHq3KrbJFGHAkfMAQ4mHr5V-RUAyG5tFZYV4Y79tRH3jWelndfbcsmZAogKRFFv4axWLUEd49blC1v7uLIN0wzt8jLIe2Yab9Xz1Qym8-zBbhGkTZN_Pe69xoaXBfHUFC6xaN97aARpfYeIGY5dSOo7A4bSNqjzlkoQpfNCMNBTWKPM0ISB9Vz0vHuRlclpNncFR7eTdiHM4bHUE3tkfi5gY0Em5i-8vV0cio1UzyjR_7P5UjiIW461VvGcdLaaWWpni9oHMqMM4H3S14J6Sm7tqVzQLH3_HuWZUW1Uy9Kvato7ntEFzH6PQ0cm6SjJAr2XanECEob8phoLx7TzLc5eDTCJg_BPJ2x8E1XttFAzw-_wNA_BZhyOXLUDe_Y=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+  <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/jNqbXhz-fSKwtKIJFqCcOIFmJm5iTNdgE3qP3K9ubhOxIOXkzZOkv-s_zn6e6T2paAez_QwDbe1TgeRVKaDhUvKaVj5sihg3HbFIWf3aezCvLWBgTW3t5CRCOA-vk_Q7HuHXIws8eDnfp8KO2yGvGJGuhkp8K0_U5AOLlS0SfOm32K5UwDxmzf4SWBrHr99vyjhUoVBzp0WmZnTr47azalH_vecuou9xsKqBMXgCMBTVnaFkvNgbHMzR3NYowgtugNPE-8HMlmVi6r3Dvz2TCh6M4jsjspg99mzvcHr7-7PgXQ16k1cwTQBhJboacZrUNpiPb45WXGxdp6onlFEXACkP-sJq47wVQ16RNvaXW6HNm7gtnwjF_QhI9c7-FhWaJGwGbx6ezLJaOid04kjoxa5VOrC2HqFKVWKPQhQlR37lH9cMQVLp_TVs3ovUu-c8speBeofhucKrQUjX06EXxdOPJ5nDWYcqIYt4gLw2WVFQAYTcKr3r-Dm73i5QyqZDK874ObHPLIHBeZD1OF0w-QBPrW51yPLcQlrFIG-ItDF-OhZSMuWeowkFGOKk9XVwjNBDTVQEIaJMtqldvUyrsXgCXaRfITRr5fCPUUSfVp0Y1u0kWVB2d_absfr4U4YbJNERd7_GOe4ZmODD4Ix4F8bBFBy3wEY=w456-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+  <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/gxjmCwatxYjXD6A63b9Ts6r14EOpEjFBOe9r0tSJZGCbU2K2Gpcm0Q8pYm-r7PTYAQKLtJT6dUkWidZ5TM459Gs79H6sXBE1XFfpBColCaB89Sog6Csv9BqRHSvI1baZQ8zgvsCo4Youn6fShFvXc0e5iv9JncD8vUavABgKURAG1JxOMzw2a0p6hFobMiXsiYO_Yd0JRiYr912JCUYbL5JJfg1iUrcy76FZA08K6bL3vbV9SQ4A2i4r8D7uWptxQZCh8MtdRL49hxyGn75MZi0sH1OqrpiEQXiXOsl-u3ePDmcKucjdw1jRek9OX0ToLgOzjw7-AqFF0ER87C4LyGCT0Osq6slxNsESumtnc1aMpuYEmfOj9gxTdDvCgZ5gz4bAxX6YkVwPeg071KTDd9GIKb1j07KgvGN1xI9Wsw3fz1ptS4IHdnmg5IMRlVa7p8a_z3qlkRBWx5qxX976Zlj4v-XIRpZSFQ6Ff0MNUeiEXUHTfPbkUkvNxmubbglY11kK6bZ9KeU_XaTVWlyLcCW0CobKtoINL_WpYgNNGe2C_uf51W55p6X-zEKNxfTVoBi9yicBAa7wWm6MEQD_msdeT7JLjybXi96HhDQasQiJTm-i6G_-ryhP9WKcj4h2wWc8aJWX8vkh58CgWSvpISoUlp7CZ0k=w437-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+
+ <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="gray">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/rrymjC8_CVHEvHelmHGrLdpiJTFM0gSq7rsVGr8GgKSQQAf_2KmTpwRY9rGGLsW3WZr_nQwAFbtaMCVJp8j_UwgBPtjyPIgBvCbV3SOlaEQ4LSPsNO_6ifF-s0mXUJ95-opqALYmOKZ4ZSSpexsSpGErsm1T63Yn_PhGndJDzxIQ6Sr4Qg5lqdsRa8crYJhxb_DTe5_qLRKcm65emDsprG9qw3UwV6FemUUTuJ_WLLlNL56VORnTr30AfFMMwptGkfmyVpZe_QDkP6GFpAP8G8jMwMFpA5tWwv9T1b4lmywRqZ2csQjFHq27C5Sa-ahYVt0Xpfzo2B8DEUfxUKRN0ceXFDQJI1CbRT45I_-0AUZlIaHGV_IT0F_YBQ7r2kpKKzWX7GeNA9IGm38J65lxKlKigEMtvxbfq4bdUETwFRatH6ApbIwUKFVHWH9yEJO9hZBvaofj_F6SBFhgJ8FT9UpRYezsYkgKORhKLcCiAKeBAP5dJ3yIDd6XdlXLSR2EIwtgS3mj8bAdjenuP0cwzdj0Iki5ObYIT5Dj35Vr5-nhuV6fJDTyVHLt2ZZOxc3liNf4Go6EnvO5IHD0FlOo8nsGUGFdjVizYtYMDYaZr3x9tecyfxiQmaOTZuDWgGuxhyvsvjVJg73XLURdQHsmw8siyB6WDRw=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+</div>
+</div>
+
+ <h5 id="BP"> Beautiful people </h5>
+            <div>
+              In this journey of my life, I have met a lot of special people, who i became friends with, and some of them friends for life. People i have shared time with, had fun and left an wonderful memory. Some of the best friends i met, was Ayaz from Pakistan, Shahab Norsk-iranian, Amir from Iran, Magnus from Norsk-scotish, Tarek from France, Qiushi from China etc. I have always been an extrovert, and that helped me a lot to mix with people of different personalities, thinking ways, mindsets. It helped me to grow a lot in the long run. Also seen when you change a country or even a city, people can be far apart quite quickly just because of not being in the same zone.</div>
+
+
+<div class="card-group">
+   <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/XCR4G3g-RZlirydFkTOpcfdktqwXpx4de-PGlvQ6rrulPP4WHIGtY0_UE5r-sqTOoezQVIzvylBy0UY2OVCkEjdD3Wy_aUHU597FPtMN9_Bo_5S367k3vy_dhHxOM9_PtcRo-Vdu8ZkjAkzO7izResp0iKIzDfZcrwA2MRBd4hfSHR9JUjCak0wgVT1qGsNc8fBp4xnG-RjNJMHnW2KfdYfv7z6N73O3FkyH7-niCXYDGWI3-741QIYzH3uDvhCLAKbN2eyLtvazJhtieHvK0tt2n2V8HEI30Rq3_dO_2-66tQyasi0wUZSHa8rktBKcECKoOxyjlCZcalixN6HzaQrMNWL6-13aC9ejH_QkQv1eO0JWlGpF0VzalyALPCxk1GQa7aW6J_HX5BzFEY6mGRzSV8sMIT-NJc4L9J6dDO56molTSpp-wbvDj8haGc4WkBQtnuvAAvcwn5uain41LhExhzVs1Pm2wz1bZwf-oRtiaKfs6FEx5jrl-dYeWrfXJJLP5Xb10eEJs8X6aYQjT106dM3H7Aap2VsDH1KYKNfOKOGrtPLm_-EPp7ks_ZcsHEju0jQ2DoL0LTsSwtLDALn8OYuaWzXO0WrrUG7Dnsto4h_UNSO1EP_dTge-Qubo7gIVqCVhoFeS1wtY9hpfNCMzdiUE2BM=s608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/hvOVL3fhmGWNn0GT2ePKzk-GvLNkfOi41ntKJkcYvT1s2vM-RGeKro1w9PTNwt24eS0w3PWE5IQqtbSbhzubKOfvIRjBEvH6A9VUAvchZLgxVzzM2N91wrq54C9VYMBHMy3KEqYpnDyYS3ZlKIk1QwY3MUlK5HVQvpWoBA_7oVxrtZsH4q2auimtZg8nK3cwx7dvmbPLcRcYobpgrBtoQLMINd1CvkUrIms27gHzvDZPFK0c63OBKO39gowkvAYyjWiNFf_Jn6KeAIQsX7yzS7MA8w1DfMcYNzGGT7eDSbHUW8EpSoAwrT6F2wkqueOg6zE26praL328KtPWl5ALgcMcWE3tQfpXR2D_vsiPBIwXs8iJLmI2KyLdpcyZY-IxnA60MfmD62sZjpvziIP39G9OQUyYwaXqvAVxxXDVJMW7x6dCbz91W1dyfadUQH43I7ZaW7miTdVZzrl90Eoc922Y6kYFAEZrsbr0kXSeJfuoxVWbrFLuCDNiD1vDwbsdSCg7Tz2-qDGfYPfnHy_xK9Rg0zY77Rw-_ym1kHBTy-R2lNrGN6_RcjEizr-P-io5Pq9zTGToeTvmW1acTJJE_yHNdI2o4yXABFL3BnAsmTzxfROpDTwaC1F2ZgXrz4knu-uFv3WowUn8g4G3CUe2DdP7UPja4zM=s608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/xXvY6pb7corRTKfi086wTaWcJ84oiBrSWmjG-1ieU8Ww2a24Ukxga8oSF9lDNFkxJvZondMnqjZIQUugcDw80Q26T6rHWy2TM2f41JybeR6SiJMLZqV3Zs3n7VxG2dh0oqtsLn8uMH1eOe2r3r0Yd3SGmzyr5d91Z0bfzPMKtZ0ypfp7_hnAtAtH1j6ayyjXT-0CftW3ESeuPGGE6fO9JVVRxDZEnKj3ngZRunEhN3hdVBav_tE265XjfxoDpINFetM65KsrZsw_0qXcnW5OCnm4o-iNXkGTPIvMzh90rVxUWe8UBra1lI1gWf1gu_7kWe8sG1d0BKLwwqQmcZ9F6bRz9qP71ADEkX6eXQXzAgY8rABFtn9g7Pd5h3dpKw2V2jExxnKEyqh99scDcFf9WMzyvbHq6w-7l0mRG6p305ZOCNLsel8W5b9FS5edWZDf09uWwqAbRA5tdlIu9WpZ9zYSWCjdBfRrJ1HRYRSj4MPc12cGWGPXISt_cn5DXRoCLQfVCrD2GWbvUegSAwFKdAODAzkD0qdftvFcjZSrDEoFDzRT8B4NeIzn95JTDCb-m9l-StVIzkbs0t_y8zmCSqnJL9a6lx75Cqap-VC4O58WEyJREzJTPqVAj7uNPtakYcWtKllLuogcu_IivVpF3iXdidkqEh0=w456-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/RZ-c-i6PN-vzbddn-LZFCj13ha6NgPcvrF6L3x2dCyIfIsJs1dmK1wC23tJ22DE7atlMof_MZNsEuLrFcXwioxBo6R-ggF4CiLKkPPD7sgFLUMtHWu04thJbfYciBWlsCjGkxbHWZL6a3-mpl-7HdqozPgNQE8CwXt6KbH9BbzS-aHTUj2kdtBcNKqT-vnIf0n0GHFVInlc04q7yA_u6yfVDlNGYhftucPb_6KWdjdAEGf8k-gydoDY5KvOnNfM1u7NB6dJQCSjfsuYyoEvq0U_HFsYj4dGNBpZfFFVfxvYfO1rcimF1o3kr57hKPGg7eye9oRM4TlBC7Sq6dY7n-FEhKDsdzAnGyb-yS8u0ZZAaBrz4C-NEwKtJ1iHvs_A3ijnZ9BspV87BBWYyFL0Z5l2KpT2hHX15KK6kLXxi-zFxB3qSiBc8QnWa5PNCAFNVwJYezOUxQ0-5Ch1vzmCYF8UUXkzqSrtbAfRiijCLDUtpw4A4MM_BT6yC-rXIPgGbFPN0VQpt_VyYshuxbBRRZVs2EPNMSl-UYebxEYrchH6GkATDPmysyokbXvJzE2hxFdhJFUoXL48q4rbwmVDWMItj6O2P-Kw3R5JHq85rVuyK4cVOLFxdZOC9ZDOQMAuCHCEMqE8uZqB-OPfOIEbSZnCZKUAm31M=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+     <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/InGdnoSNZBdaXp9-Eex4PrA95d5nzH8_g-gDrDNp057zTZmsvvh1vP1IGd2gLDLHHXrz4p-1fZ7N_gXMZpeFq2ERXMUFw9APVObYJnRmRG6eK-wyNFy3Hg9Qd-aP5FaOHa2d7DfLn_QKmAIfjgJw5V0YSnSDyJySBLCI6FAPPwJRQSq-iNLb666NJXhk209r0blzGU0_-GiTvCg590ZZnW4IVBWWxF6AiYN8nHt4yWkmziQdZEYUgipZFUuVxwWZD0QNX9--_b8u772WUAQGlX2pBelUWQ6zW9HKzaIJmdwYb6cz5ywFYoEdhPdLxVdXE668MBxqPckdzikeBTQvD0EOHLdCR6TqRqpvK8lMVMdUNYncQpKpHjhVb4AcQ3dIjcY1r98TqfJ2Fe2Sj83b1NF0wr_wS2zvP2a9CnRUHOAJVU7K0JqeeGzmo0e4YK8mT5rUEkqMAVq0UGPZmLvvEdrWmTodckCXRKOeBhy2yijZlSS8t_G84IWNwZfxLuQY3kFbarz4CeKEKWyut6bOjOPKHZ0kXCiZHt6yGLycnfA3fJYJsujEs46HVrGbfRSbdJoYqmrBUtjfS_zMWRtptWsa5PgnvqwR2YYL6LK2UP3HzUoMTrMyt8xih6ja-YCAxg136wjrIPLdkKIL2UE-sugRgujHdms=w456-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+
+  
+  
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/UzkJLqB0SgscYcxGGgGTIWEvSM9eTBlU1m-AgMREN20z24bplwIbp5C7k6_NJgd2AaPrCL1anQByorod8uOJUlLlpbyqT_m11waJrUJpqK6yMf8wK7itac82EpyUMD4SgxVfl3ttho3yNsH2TFs50vKFnyDyd4gvN-Welab6EwaKj24bs9MP_OFaGdcjLSoKTWLA3bOimrq2E2BAJZLCUr7gJ3PuU5FoNRieqNOL6qiO7DdNdMvyix3CBp-sgVYm0CAuh-Cr0QoI-JDYHKcnGQjp7pkQBzPJMy8a6OyCxnTTdK5dJIi5ye5FiSFMNN1R45GeC9S4jbq8w2-uj-t9c402BvpiwSAoJOULBPBIYSd2Rap3XmeItCRbCxsyXF-BDDLd7jQp8liJrYMaqy2xWn72shPQJObKqBE_TqPrJyCNS69X1XIK4XUQ-Vk3NZciAf3V8nuqYHqeDQjDDfTtEvfYo79308XRMS14Awk1PAcfy4szzvYEWao0pBhzFLqRw-DCipGlCOInqH1MDgO5Qiri29mNgG4r8N2B-k0c1F0VuOfj-Nn1TXZ_aZeGSsakxznDEf1HPq8sDQtLCitO8epgKsS_-kJRPxIRsrSBrs7ZC1FHxC59PI32c0tmFoVvzlg6VwnJy4O7p1ulULLCKtOleRQyohE=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/bhPsc65ddG_Cc2VvNwae46CtgdCYV7v2LXh849BaB1YKDqNmLyz_5ZTp-q0RpFqAy27Xr9jOlkxOaK3uhc3CMlolW5sLVXlQbSZGDyiWUyk0wsnknvhZHKqWL6UMEUqG8XetFhAv___xn7vmcDICTAYXJQ54WuxLvXhzEdIpD6eiqmWY9iMw86Zmp-V3ZTmxeQH-DAUw57in8dUHsqC6oRs6RR2uw2mj6pGfB43uW4no8HTCvRCPGgt9bfGy8v4GiF8e5IqJDO-9FHf1DJDAEXOgMMDXB1zpJvFPp3JQ88PcZ9dhaB5PBVAvK8Y2iDPG5cGMzOV_Pre-eX69G7szHJt9NWFLTA5s1YI71lPftjMCVCp1yhPJIqnleYnh_RjP5nukTl4H03DvGiVDFKKQh54cxeEFyiVenG4SvWe7DzFvup7uIsqTCDdejtYzNJjGudIm_8NXhUjwj7u72KOSW6V30ZHicRzrWLpsrZv0pwhXiPm5-eaglaUQaLWPE4RBVdjmd54r7MsnaRf4IRT96fq0VEF0X3naCrbRSs7kcSH6kohuM3BzHSuEkpN8lQF1BL3jf40i-scjgIyeWsDW5nPeC9hO-TWRkxyhdsiXN5qji5Wa1P3TiN9x3OcS6uvxL4vfNdSYxyZ1jE95pkKPux13fH6Rhb8=w912-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/08YTh1j733hgFcDjYhUCtyeNWQJAXQVgXCL9OlgodTaO918SvNr58OKdpEPJa45qKKP-mBPJVmzeESE3SV3x-7f9EFNSjhhDi_g9txgsVJiaaUJgetvYmJH6VkgwIl2OBgMOAF0Qd3Igpy0wTYpscqNhjkK5xk3rqCSegGwQE4qGpUnKAA-5satTj08fHpKBsYmNqtXbO1cotdSQqRhry7dlZ__mA30wXDyiGEfwIokuShZ8O_VFG-8CK6yGZKz8eaLcy4BfexfYJ_UoIP5sXLzImA_FGBJh5_xCmLOwunzspw9k4K-ybt-Jbw8naSOGzPCUrKalDJwXt_cZm0xOq-QtWn-6Jrvz10f2JHpNoSyRFgvbx8IFi0tM1NQBvk2XfyXnCC7KkqLghmGFvRhR7EQGieWj0iy2uJOowT4F-ckXelB9vIo3FLHUK8OuZipK65jonaMlHfyeCA6LFRIvblz8_BM34uBywMmbkrSYDYQCfzQ5Y6kBdGLh3hsUEhXLZ5CAGVSONnfJkNk2_nRJpDGHh1tq1VH4-c7OPRnjA8FFZR9eNuzeU9-Ojxx6HO7i8KDaoseZN-ZnQvulvGgNzE8VhC8e3OXuKyeqtNWWB2gJfUOqI63jq34IjnaEbFcQONa2Zc6QohJ3ga2YAWGp7y1Z6mc2B3E=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  <div class="col-md-4">
+  <div class="card bg-light" >
+  <div class="flash">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/LqAQ8WmFGR4bMGrlhzPm2L5c9i2Al0Blvxod_D0w3E-9axHWVP4DI5bN06Rolk94gVCxm1Ka-H6WPZwlytPR5H_k-uqL_EODzb3oF0L6qg2AVQVSl2GGOnJsERlnNAbBRaq2-QpCm_nLwGfRdIULAPxPLVD0QGyos2psNDGgpcm-7BGTSYos9L-Ca8iCrh6wUEydYDA02eo512d2TpSCk8HmmCNO_v99iGtHwzO6kuyO0JG8ddkC7-uPNOo9kfblx2JnMKMDSn_Pj9zKCAL5k2JWh0HlNXn_hWbG7oRMRtFo4hcrGHf2uf7qBXc-m4IWsKEhOOiUgErKOFRrDpJq-6RGQn6rG4gZKJZ-EYkME7mwy6F8UJEhgwWjuoe0nXRSUizeFiSKIfKieBqRkFGjdOrWhA1fxaVLUrXxnh8RiixIpQqk71wjzlQR3Ex5HxbC_vAcjNPDRT9_iiczAJCXWzwS3b0YYNsf-pOPpx9SggUBBi1D6nZ6LATZLz_M4uZJvrC_GQMuDOikqC8RLqvuD77sZVWQhdLb6mz7AFnuntccUy4KwqadCtHDjlCpNEDsW7XnHRAVNUAzK81JWGsqjO_-gRH61kXxTRHnCrXPZiE_CmRWbhg0av2M97bdARHGRr6cFs33IIjtO3Z5r7IZVCELRzUDXAI=w1081-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  
+  
+  
+
+  </div>
+
+
+  <div><h5> Trip to Bangladesh </h5> </div> 
+
+<div><p> On december of 2015, i made a trip to dhaka,bangladesh for a month. Home sweet home. That 1 month, time flew like the wind on a stormy day. It was nice being home, no cooking, no stress, just chilling. Having fun and spending time around with my friends & family made me weak to go back so fast. So i postponed my return trip back to Norway for 2 weeks more.</p>
+
+</div>  
+
+<div class="card-group">
+   <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/PSlI7DxSb6skNaFfDpe1L1CCW5mF9B5oRy-SpqbqoQ3FIzYNXHEZh5L87sNB9nwIM5QCyXqozobX6XefddoEkpyRVIClqRSvutH4zE7yv84ZXQA-hfT0icGQy2grDqsGoB8nUr3bDL5WUu1SYG-p4cLAB_HbESFLOd0DCVJfqERQjGJcPEgf80FxwOt1vPWPb9jT8cEhvshtx-7wfNhuQf-xl6srykXvLtYuIGG_Lew8Jlg2FSRJ-BPl_xN2oT5zl2lQncJqjw3A4BTzvuth89qgbqo7-l2QeQZTlbM6Ml3KeB94TbGbfS1qpy2cFGiTMIenpL2or99EYAurs2MbDkogf5AeOJN4Uspzaj2M31u-mXxt4w_l3x-iAT0GNwfeM7TAkzzH68kIlpSG1yTQBWe4fiaNH2GWmcLf7psYhJ6D3OewK72hlsxmmQsFgd3t344o2Q-PzzRRnGHwK904DjyXCWbLwKTBQ-s4ugvykor8JZsqF8Bv6jV_lrdsoU284DPP1E9BUwOUIqkx-nZ8p8q79hLjBOd4WMYfjl5jdbS6j7b1fUIYEPgrfZ1ONHeYB2DAsdgy2DGWxb6djuMqCxG-gmdbqd2kBQrhipBc3pcyuQTO1poD8lW_VyiFwT3FvUttHq5Dcd2nEjvxWBy_UdZr94Wr168=w1014-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/iDyEPY2Qu4nzSymg_0mAAr__-IsATO1zxr1ctplUz35-sa23Em9nw92eQAZLRDxIHdiaaN0psl47CrXkOm_F5QsbvValigudyg0AcKF6yI_a8UvB3NuN-jSVGmSOeYb_QH0qdWGGVIzhb2Y4DRqf_3Q59Tz5lA0PFWPBIKW0etm_Jm6SK7WFRa2f8mnjKkv3CGr_x4i-WP98-1CT7pTK5Fpc5iYd6aRShUxsf4Yoe16SjO_l6XJ-qAF8-Vv73NEHQ_omFbQyfFiyHF28ykX3ypSkqdRiUEvEbsN0pQTxopZ-0yOYXzZeurqA3an3frFuxtrvW9uFGd_hEayNPZ1HQRpxfPp4OAa9qdnFdK8S6wOQD21UbNFhwXAd9CUXAlwSkCq3IkCF1IflJEUGdoy-gng7WU3-UQ_YL2uc_y-zmrxaGLR3zA3TD6Zv7KtEKUDKKIK8x0qSkGdgz5X5EPZi_2WWDzXvEg0SLJSGwUwQXwI7NT4o_FBC7gwdo18fD-h9IZhyYZ3PjfUUYI739qGW-4R-zIpCBvXOY__AGsiawUkrdCuuVIl0c3rekJqqT4eaPXzVZB5NsITxxNtaXYs6gUYxKnGxIPXFYA3d00DUokkIMsp7XshNvQ-J3CiB-1A5YKcjnaVw3lVo5jOVg-GPAxoWRu3pATo=w1081-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/b4YtoqBtP7fLFEpCoDAyugmt6-1zIOyDcZkCEWnC4f1T8dR7uS8wPShCbmZdYrZu85aa2GS9ArnQOY6k7dO1AXhWIKz8CyZ5qRbdri50n92p25wUkcCAuDxEfMM1y9yG3QE1iCJZyDt8yga6EwtHCUjmtLMuXnzPzP-Ri_p4FaUY1fF3gWv1DCZQA4zmRmXlDA6qHUy20s6mha5sy2DpmZQH_cbwriqXuV22RL17LYajkl4tUdyxpXEFDLBZbigMGEgRVolDruXj9rJHKb5d-rzvyLWwjFkORX_ix8-sdxk-lEvmcAF1Dgx8pQMfAyKSHkfW0sATOCqfI6MYZ0ydMkdQbu5kx1ERMcAj2RzgEWdtnlyPT0pEX7ulvbCDXChdofiIWwArxQhFcXclHKjjrShCCVVVQkW1pgKIwkoIfErSpI9ggNTO5kCemvZMNwRVldMxIIDkUBalEZh8UalXEp55RdUOuevzGtvDV4FYgiVwftnoxGZUlUWQPJBoPaMEK_sijqAEWhm3nHC-Ht_onaq5mOHwa0SzyYZjK2Ypwbge4PpHB-CxspObi-8WBRF_HU8ha_pkoWrnyd-LBxLlEsTADndW7AoHBfQrsk37e5i-abLF2bhPirSS_eXcIp23RodC4hxIj9EXLS9uSdFP4Nkq5L2-VTY=w790-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/Oljm2LoXaKQ3xP7UX1Qdz5HARtDVAeG2xkA8U4ve6dulqmApuVbegBBi-Hk94WL6x8vmU_eK6AUNheNR4SqeV-TDL1dY77jnaLiBEzQUGn93huGE3XRQ-hKTfARDL-whdZsWDbujXCA9d3AKyfgjBIRve2mFaZPjNuAO6OAZfH7vjCFAOUjTbnXTAJTpv4AlZwnYGofsWAVn_yL2mBe3BT9pLWesZD0A1FtjSY5gpOq6jKQasnQEpYvQhuGCkl_eUfN5uWRaK5bbuuuW4m7F17SDEEhp8is1KXuczmhlQTo-0vLLZnZ3yoLrluhkfK6SFzXwpq1l0WrGMra7OX3PWtzWh1v4LSi_BjJUk6Kelw8DyNBH03iC7UmEoC4-cy7GYypWoHNi6EY9iNmfgGCdAGmlFzOcsD9d_pa1y9KCXX49enxI2gDU0F9ndf5b2TjQDAX_zQPQFtliV0ii4teKHofCjeTIWZvbYYIffam17uE8t__fzl1S0f-H5BzTLppHPmU9hfPTmPrZy-hsoRp1xF8H7lTYGLvRDIyrpsfZSRzyKpzZMQcb_tTjBG9hAegGaO7kPWnSrZ-mvKKYFLDMgFOBlhovzdl1uVxWyg6O1E_vFRHro0j_CKj0beYFCBrtWYErSjigzGDZzy2rjesvfd7r8DVqt9s=w1081-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+    <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/_InSbvDjOwn_xD4zX_3IZ1GI2FrkC6duG22Qnn2KFXOYVapAwObuGxC7rK7cCWLvSeb3o0kBvK4fDOtijunHCRTS7g34MePKHySUfbGOD9l-K_8jYi3yZkkfFvHBW30qXrGxwm-QYSceTpMvmSFq9VY268AHaSK5_RNdu1KxqfDn0ABs09TFLKmAr9FuPwqvIoG8rrExNtcA69nqJO__1zfFkXmpBLcTaeF4XGbSqZ1i6f50V9zZALq-eik4aAYKT-pFRPomx2mwHInIc0B-C4LSJi3JymuWqNCT6g4jNk-jbpEsBO9C-y73tOQnfuZDeRih7A3jzY1r9BN_FII7cb-s2OPSnz-3jGH-meNXqxCvSPfifDG7g8eHIVEVpr2keANtUTL9QlGjBObKpnDA4YrYt0rk1CrVXkMBKo-WUa4srqFJVIHC5zo1bhBqvwjBgOClLVHJMkACLmu-iw29AYfkGp5SHoEW1Ba0XexEZZlI3hopWqiAUGh7c5MeKOz0VZXEZBQ_4Wg1gt5CmrJdNI2YBjXjQlfdrjtneFqgnFOiSS4P-sz4XXBAkzVEEsswfFP6hYvI6Ri7VokdgvrkHQcO7Hdj0avdyqH1oRx7VC5wzLZKo8z04IVMVRQhH3ohuz8JIH-FQfd4CYwn7cge-a6lfp4Vt0U=w1081-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  
+  
+
+   <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     
+      <div class="grayscale">
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/nTodLsA6rqOLCpVJ6aPtgLq2uzDryBSK5vmz4mW_5MoYYIssJfy2Qr3rXT8SGPzd6aIiB1BDpP7fSkC4Al6HmS33XcPobJwd-K9r0YMD7ovber6_PkDOkehfrG4XDKm5EcCOcX90IwpACesnZCvGJJTfGpXiJiYJLD8am4AePZYQ0v1x_ASOLUTgvD6ggBLFP9aTpmJMpl8AqEzB33fePgw5Od-G-WuRQ7mO0601Xlv0AKsDPUfCjHMPjbJSuS1KG7DxXjq76YNOlIDtVbIvBuMHXQG8mcXE-vf1kj9LsERn3-Nl8bd0-Tu1dB5vop4YRbkFK8A_cMzmj8chv0V6F4rq9UKf0tQlzb2AOsbhe7KHtYDcqrgieuUvELXS6WWMbp2Ik1kVZ4wJJ4AKe8UL2RE3C77n5haoTc5eKV8kCt7a3oHi6u0XtoMo8HWXLdXQIyhT3QsIYb57WOpl-5UexPG0v_I4Gx6p26LaGOm1JBf29X9dD8YjecEReIQDLIscEASBaj2d6-WusQ9CzMCbL6HvxMVsPkeONImKm5Exh5njkI18iHL_XGv38uOCpN8W8yNEbmfZ8oeu9jy3Dz068sqoqEDkIEp48R1Jj6DC00W4vrwHbrXrmk4z3mzNOlUYm8eHcCmBE-dKUymunFiuecIkkeXfG9o=w1081-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+
+
+
+
+<h5> Graduation Ceremony </h5> </div>
+
+<div>
+  <p> At last the graduation ceremony came close. It was June 2016, a hot summer. Finally i am getting graduted in my msc from university of Agder. It was a beautiful day. That was a day to remember on this colorful journey. But little I knew that it was just the begining.There were loads of pictures were taken. We were all dressed up, gathered together for the graduation ceremony & afterwards a dinner.
+  </p> 
+
+</div>
+
+<div class="card-group">
+   <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/9KpD7v3IULVZi85tIOg5-dTHS_URsDJH-mZjw8QzHsR7QHbLKEOtx6Nh2CAYqBeZzmjllse9yYIzkR003yEv6z1fbTsdRlqQ0txVlDCOd_4l6X0Bd5cBFPSH_fKp5wAJcE63gJVt96QkKYl80-995QT6GtGzfvncv7_oRUpGoQG_ZCAZRC5wxPN3qECw5QE3M6kg0RehJzFQx6CH_9z2PbAdNOmWJ0-14QBYYJYLaibMXLzzhBjhGIL8EwL2Ntyac3UrpBYBoRdAj1dLulGyIIUbXS_beeDahJ1fvzUV3SODxzNV7IFbypPFzkIPEeAZSGLu-udKvkQpmwhrCa5aR32UG5R_GQnK4z2xy48JNP4gwdPbpjnSE07xWNpZ9Kea7r5tic3W9clO6uEGNzOR8Z3Wc0qwWbNgKPU9uXqExmOVQ6kEbwfJ_7LtYOadPf1DxbdLJZQZSz3DcSL_uKu9exLixgcSBeGmePfYe0EuvDb3oKP-7B_pnWkDkWYBke9S-zgcBEOWioR9mwr5TWsvhaRvRgFNGQO3W4Ie5hDQrY8O657E2cESfYPTMkffOCZarw7cFF5UcTJACInllhczj71RMspR6R915Sns1UqXivovhS5WL_MRNGGTsmhy5PO8sLA6WhNG0RXfUXmX6FloXOyNpN_tZGE=w900-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/XjHHkJYvB2PvMukHBa21iyUbZ0I9DKpQKvtRrwUuErmKwkr1DpuDZC3uwi2-F1c6k1M84IkqSg6hZhRCgYyBIpusweye6UNy8aPbH9S1qGJvwbGURXy8sAnngNW3OdUKwfA4CiS7mAU1XYkYReEdeImFWecy0o-fa9f3ieO1imVkWZ0sSCDEvX7OdEpeWJlwNB-itt3OUPq5b9p4dS8XQTSun0yGrZ8r0SAk9avTAIFYatSRaV2jT8xrvECWyMsoGR0OFXBxDg4Rl3m7RU49Y-nl0yGeHVNxYGpf7TiGpui_rC3oqsf2zyyOpcZBG1N9c4rwonXd34B6HeHtJf_hqhinVrXWM8qtpsmHEU9dL_Vm62AmZRhvTLg_w-EPpJEhv8afhlyH6wK3qFZh_UVdbVo9W1bhGf-tS90L-Ey0c-9g3dxti3ESbco-EkfyB_vU6xPscSndo4zebm0l9cp_2saReBFDVqm-rWvrYOHYiMnjp6yxngUbtmaD0YRvYRHrS7PZ-XlAG-ozcbq5r-Zc2pWE2PL8G36N1WJUAWNO9SqeoGLwgjLMM3QOiyDdZfc4tcSHjI9rK8InR4nxOTA5rtDXvV9gNGjMHwnkjeOsqetPGTnKGMFubPQZTuzhCQvQBS6foa2i2s9nw6p6ILYmk4ipxbGIsDg=w912-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/Qo2RsodjZOW8bKyHWM8Jv2GEl-DQ2j46S3zdxARzRiJD98k1lzZfEkmoTRzGSd81gsIvB_TcDi6lL7J4eU9HjVMP23pUo5UMjiTNmY6H9ucbXccbvAJfDi3JfortAxMVCG3uS5OJQAxeXdc8VgL_8ivs3ndpPdgh7On503kLVbSHeGgD_iQgSzRQHsjNCn-bDoToVOtijhUNng2swaKZcAUUOoGKkmvbH8kjGP8Ku8wB7MTFtg7t3BFMt9xb3523BnTBxl0HyZrZ1jBFoXFs0zhObIuKhh2466HQTsVLbqKcvQhoWepH8H_CltsoPftkkUT1kOTYHLs5wa8eKwR5K7d2lopk8C41StdEzVOLfTaJwPZjWpUsd2knmF_MUr41Pu2oV8devjO9xigrdIlt3zjSlvLbJyn47zZx9uOLvEpk2QA8_Da-Bkwf39Eqdwip_hEknDIoD2Am3EMzF5yyNjsdBLKHBESE58YHLbPddFEJxVtaN1VNFRmUhcxj49dqM5iCa2aYYafh759odSsutJLq9Arf-hJVHBYOANNxtK6f9xgVgns2ah-mtRaZ-6fxZIupjc8QCXEHCQ0MGHsOYeMHwAzs60Eo9RY_O8CBUJbuLaH-o2w-7GlgCnKMlQzjeNbqXnrlKDLhpq-zFkesDoghXcXWEPM=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/2gjGdZLDOzTuvFf4MYyVXxe5ITPOYkwFy8BS1_4bdbiPnf0ZFoxmf1FeKzfJYwhSl257dDrK8VhV50tUQM_hLg-4-1UIY7oan51E5jhQZI5_C0Fn9lpO6XYFY3HZbaWTMxdXLhTqK5p0mMC_5JRdI4D3x2vrnhzbK3ovklbqm5OTl0ahGcvvtXkEzBmWnvBVLt0pnckMxNXYtmDiymuwdrog0a7RGcMqpFX3J4NX0kTuGyxtdJ3KoQwULKtsbPzlmULvx530iAMREtdWlp1z_z13aj3e2qtZPCY5RM1XXdSjIGUD7u_OoQBVwE6u278et1CAy2PkXc2SNIA1540mHwURTxjcKw4f8p3s3qlNPTZFPjtgMgF7tki-qoWKXzayq83ftpzZdZ-QoTRnopIJyVwuAS8izbrQjUeD8s42G32PGoIVBb8w2Rl8oPBY0LfVDKpCsGL1spjH79NGlLZjaBtVLn9xnkBQgwTiDQSF1WTDv_9uWsUV_S6p-MqOokPXzorHPz75yBIcP1yD_7Uc6H4-HOSJ7Hk9lJUJURjKX6nv9QMLpMB48sSNVaqUmeqz-TJ_RY8DScFs540pmLJipd6TqWbMCwEhXyeUhHlZjELozQoBjs2fb2CNLHmopxAOsGuq5FX5Xnbobc9H368D0xvKtw77lAA=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/oPpEgDf2UoN4fkWQpjoL3b5bw58s-XosbWF2k3GJIa30S0-CzXcH7xgfkoZXsv6OM0wyI9YgjKaMsFcDcB9hwUZWyfJvVPBOI_kTyt0NsOld5uU1iyNKiFAaAIp32PeObOVRks9c1GHlu-NQb55S8rLJHG6LxOZ0pAHH7ky7yAOQDvOsV7tRjcCZq_XnGfOWIm3aXAGeJAJDU7HBHsfziHLE7afjSmbnzQEty5TuuqeG1lkR84rA7HDNgW5IeSHGgyEhRBoeNlePC9ijTPOqpCXs_-onJHRLA4ihykoo9TG6EHz-dJbO-J3ksE9OfDkpGjq-QAPMoah31naL1ghC51ug0UiU9dkXhaoLQlD93pTe0AlYMkBOBR0SR9IKtS2fR2E23kXvR1CFno_OKkj-bxDyu9so-S__mQ8mvRpQ3H5sPipehSb1tE9EkrBPoC_zXslNGTnxR-0GxX021PGx2Sr8swAg3fn23lnXJYdw8u3iLOWLXCzryUrc_iVri_9PdKa_tbx2WQHuEUEdiOjY6MXoIuRYy5ixpAaDmQ6ZcUq6cDMroz9nnUgCdlgNAAIy1hkm8Kj3mq1re9W-BQbHNXLx2vdMpcaVv3aEjvnei2qmFZkmsPfVxR9UP55ZWahjIl5o5gCmlZSCe-24ceRWJChUvkbonEA=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/iOP1nhPN9CqB01BuLOx4EWp85_4M8xUI-thuE5TsMkRkJ1a0N4uT4w_lGHd5zwvblXmWgt6fozpQPIENqcmCFt0AFtq2dOGfPtB-VV0fiw1wnhHKnEsuy6YTm30rZfzLvSOLZql--K1A6vgdUSlkkYZWWyQAudcv30GY7ms2ews1_BB4Bq3MUkg4-dNUqPZExh--V_Ripy1DgbnTocyjEubAc9r0M053JWFC_MCNJ0-4pRdvfI95-S5Jeqx4XSawITpiKoW-I8WNsl9eNOMEbZrMfOES7OGvOwJid_xT11-csh2Q1ZNeknkv-4teTAzixrOzeY-TL7eWstOtyyCy11m7HQxgEG5No_0VHjpDV_rHfpNrN5AN-Ewa4qstKm8XLEMA6ceBKxyPvq3x6Rp7byZb3fi3y1sgnWvHrkDTqHpqJKNEw_ks6GHp1OnjCIsAwg7zpAdIOy35xcGQX6KBNc_sUMOFyvYfMxGuIQ3F1HcaivOzkVdsw5Gon1CmONWYRSioZb4oW1nWjD_IJKskjZScI7gXKcjlOWr5iotZ-T-Tl6ciwGkjWuf0k8788DrRJG1RYiFHzqYY3bsRaipOXdLwfk8LuTCwCvCN2h_hyHbvrB5gBhQJJ2JEHOZCoDpvJPUnk-AHbzMu6UruCWiqPLlVgqqqSz0=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/hP4jkMOr6JMf_OMD_0QUkOyJ7psXVqzX2FcXzvTpWH4lVwuNUuft29BsfTOOdhl7kxzLt5rJ_Tu7gB2r9c6pCaxZ0wT2PmDKe_T21iiWwskCTif9VChBIj3mI5WiVjnA4YicPY1shWMasf6ei9GTCQmjnjo8_CitYiES1LSuP_dOjdIvjwN4EPHdEjr81ZqF3gpO2WvErHNdXQqk6lqtvaoRl9bhiOPfeJRzmXwbyijXohg3cmtOxEofLz5fVe4PKIBiA5PGgVxzs44_w-E9-zhW513oPiszf-bNkuv98XD389VqthKe0-9uHc7xlRJMYA6H4-ivSzPs_PVG5qMn4EhO2Qvwn1ay9V761-JarQeT7fJJfHG0yWIiveF3mlNKKlS4n_1dV-PUBnqMcUbeNrYSdtvZw1UPz-HokhU6mzdXlF7Pe9xIFe_euhFzGYzXPjIeWCbSouqMKaG2MlfrwO0Mn9d8gfOmsn-NVWxQ8T22T_CN3iov5t0LVvO2uJFe0hbYTK-Oszep9zlS6zNuvVB7f1k74OEwu4wn1mlSpEhh_OEw-HJM3QhfZ5n8BAfgl7ry6CqXS0evMV9J3lOpT1UDOigE0AJWNzdJsABPZDYM1Naqmr00SJLF0lf4cLgj26dwyvkfDXhvwwM_zDPNoroHyDRHVtI=w1081-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/pc9WY2VwxWobEWATtQh3sj1W47XBbHKKgn-31by6OT4ZWo3EwqrXNfoZtOYGrRjQOc564F_kGaeLZ4YVEV4fUjx0iTsHFU3N-p1EvXCsrUxdBXtqfhVqoou1ABaKdtnw97ppJKtRmHozY3p2oK1Hcbi4CELBboKtgtUzeTwdzfT8iiyIGYEAbh52_jt_3YIbOwqMOo7TfMcHr5m1XGWKrCXrfOKU78cGb-wJp3bU7aHB0R1fHMuWWDHIF7-NFj-dVuby26_FdqffzRWXaR3cup7vyZrrbzzoJzAGXlK6bWQWve0XAtxW4FfbiWV6Uh_6PcK2XIkslvJ3BqQB7_ZBgc894Ljkx4hUKznAv1I8BtUEDx6Bjwo20KdLp4HgnikF9uX03cU8HeUYQucRqjHJOLy9rcp-LsuEUvfjHUXOThKaZPzPfb63oRYFjcWe7f1pqLi3BvWyPgvwKxlxmu5YkI0BQIH93LNi4KYvbkFPg7YzGFN2jDkQH0EECwfE9SYFRqmGKsSoQ8j44LUh77WfRVHtmsuzyRYj_U0uEZvdExe87f1Mil_axUTDaW-pb6YNHwZg7cGYXynX-KAPTPrjUgxvax2R4QTsnQ80szjj5ZvbbhBcIGUJsHJqy2HUIMvhbAreBXU-7qCPDLdC3_2E7kVIhAnDvb4=w861-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+
+
+<div class="col-md-4">
+  <div class="card bg-light" >
+    
+      <!--<div class="card shadow" width="40rem">-->
+     <div class="img-thumbnail">
+      <div class="opacity">
+
+  <img class="card-img-top" src="https://lh3.googleusercontent.com/ofsxyS3NjHwS5AEOvrAP_9zFcnfpzj_x46ewbPeQvimgPmS3clSVozj24R4ctdAwRpirbU0ZA4P4rvzuy71jz_b_rGI8utLLo0XlsnfTqXWh9G6i_4LWqnJzfdR3jN7U38YfZDdRWTt6vTnr23GJbpqCPFmZch7gRxoFHZmf7eMTL62M_L_W1xLF2sMyQXSK2ZcOyMGQm9oZA_zaZ_93bdWDJA-DlWLriCF6aAdw50bp_NBrAQkLppaXuCVT5krx38d5nhbZe3QP5KsYdY4L_gkcAbnLsAg4hYOGB31DqlFzxjHDUQPdEjbCq4qLwN66_Fq1uH4Dw4sL7UbvJkORmXtqgDnwSCk289UHtQpKd3ttEVZ-wQtDDzTSB7l7pFMLX9lS3p6Uz4RsvXjWFvErZNf3g1YlNdyjPBUO9Wsb0aX5TINOOEr-8brkE2AJOoM3HdIcvsXIFZiHnBWPH4E-meGgSmIkvs0RDWKCRNFiFcdpIFcSuNkNNCqQDqYneGYYj7wJbvYffl29626PJugFdp-MrXwNyv5iYpQAR_1EkdkD_Ezs-m_UwTtphHR16JVecdyhE3oCnxf7CbTVs9Ai-vuMoQv3R5z2bMkuFDJMae9S98MESWIsjuEhn64np9qzKm3aoXj3WpMP5idWf7HPVo7JTMTQ1Cc=w811-h608-no" alt="Card image">
+  </div>
+  
+</div>
+    </div>
+
+</div>
+</div>
+
+
+<div><h5>Transition from student to a graduate </h5> </div>
+
+<div>
+  <p> The day I had the graduation, i started to feel the pressure right away. I thought, i am not a student anymore. Now I have to find a job. Maybe have to move out of the dorm too. But i did not move right away. I started doing networking certification from Cisco at the university mean while started to look for a job. Now i have found out that in the job market knowing Norsk is a big factor. Even though i went to language school at the commune for two semesters, i realized that was not even close to enough. I had applied to many positions, but most of them required to speak & write Norsk. Still I kept applying. I had a good thesis and a good grade. But I did not want to go for PHD.I did a job as an engineer for two years, before the masters in Bangladesh. I thought PHD is not for me. So i had to change my strategy and apply to more international companies & positions. Then i understood the market is quite small, not international with  traditional network oriented.  In the mean while I applied for green card to Denmark. When i received it, i had to start thinking of moving. As I still have got no offer yet. So i did not wait anymore in Norway. I knew Denmark is a country with a similar language & culture. I wanted to live in a big lively city for once, so I choose to move to Copenhagen in Denmark.
+  </p>
+</div>
+
+CREATE TABLE groceries (id INTEGER PRIMARY KEY,name TEXT, quantity INTEGER);
+
+
+</body>
+</html>
